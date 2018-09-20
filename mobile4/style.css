@@ -1,0 +1,154 @@
+@charset "utf-8";
+* {
+    margin:0;
+    padding:0;
+}
+body, html {
+    width:100%;
+    height:100%;
+    overflow-x:hidden;
+    font-family:'Nanum Gothic', sans-serif;
+}
+ul {
+    list-style:none;
+}
+a {
+    text-decoration:none;
+}
+button {
+    cursor:pointer;
+    background-color:transparent;
+    outline:0;
+    border:0;
+}
+.wrap {
+    width:100%;
+    height:100%;
+}
+.tnb {
+    width:100%;
+    height:40px;
+}
+.logo {
+    display:block;
+    width:129px;
+    height:22px;
+    background-image:url(images/logo.png);
+    float:left;
+    background-repeat:no-repeat;
+    background-position:center center;
+    margin-left:20px;
+    margin-top:10px;
+}
+.menu {
+    display:block;
+    background-image:url("./images/ico_menu.png");
+    width:23px;
+    height:22px;
+    float:right;
+    margin-right:20px;
+    margin-top:10px;
+}
+
+#vs {
+    width:100%;
+    height:100%;
+    overflow-x:hidden;
+}
+.imgBox {
+    width:300%;
+    height:350px;
+}
+.imgBox li {
+    float:left;
+    width:375px;
+    height:350px;
+}
+
+.btnBox {
+    position:absolute;
+    height:20px;
+    width:70px;
+    z-index:99;
+    top:360px;
+    left:calc(calc(100% - 70px) / 2);
+}
+.btnBox li {
+    float:left;
+    width:10px;
+    height:10px;
+}
+.btnBox .btn {
+    float:left;
+    display:block;
+    width:10px;
+    height:10px;
+    border-radius:10px;
+    background-color:#333;
+    margin:2px;
+}
+.btnBox li button.on {
+    background-color:#0075c2;
+}
+.bannerBox {
+    position:absolute;
+    z-index:90;
+    right:20px;
+    top:70px;
+}
+.bannerBox li a {
+    display:block;
+    width:86px;
+    height:86px;
+    clear:both;
+    border-radius:10px;
+    box-shadow:1px 1px 5px #333;
+}
+.banner01 {
+    background-color:#214c9c;
+    margin-bottom:10px;
+}
+.banner02 {
+    background-color:#0098de;
+    margin-bottom:10px;
+}
+.banner03 {
+    background-color:#0075c2;
+    margin-bottom:10px;
+}
+.banTit {
+    text-align:center;
+    margin-top:2px;
+    color:#fff;
+    font-size:0.8em;
+}
+.banIco1 {
+    display:block;
+    background-image:url("./images/banner_ico1.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    width:50px;
+    height:33px;
+    margin:0 auto;
+    padding-top:20px;
+}
+.banIco2 {
+    display:block;
+    background-image:url("./images/banner_ico2.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    width:52px;
+    height:30px;
+    margin:0 auto;
+    padding-top:20px;
+}
+.banIco3 {
+    display:block;
+    background-image:url("./images/banner_ico3.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    width:45px;
+    height:31px;
+    margin:0 auto;
+    padding-top:20px;
+}
