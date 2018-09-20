@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>무주머루와인</title>
+    <!--[if lt IE 9]> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Mobile & Tablet & Responsive on the Screen-->
+    <!-- 디바이스 별로 해당하는 스케일 크기로 화면을 보여줌 / 사용자가 직접 스케일조절 불가 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- Render to IE's latest version-->
+    <!-- 인터넷 익스플로러의 가장 최신 버전으로 랜더링 요청 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Refresh Interval Time -->
+    <!-- 180초마다 자동으로 새로고침 -->
+    <meta http-equiv="refresh" content="180">
+    <!-- website information -->
+    <!-- 구글 검색시 키워드 정보 -->
+    <meta name="application-name" content="무주 산머루 와인">
+    <meta name="author" content="Park Seulji">
+    <meta name="description" content="무주산 청전 머루와인을 맛보세요">
+    <meta name="keyword" content="머루와인, 무주, 머루, 와인">
+    <link rel="stylesheet" href="./style.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="./main.js"></script>
+</head>
+<body>
+    <div class="Wrap">
+        <header class="hd">
+            <div class="hdWrap">
+               <nav class="top">
+                <ul class="left">
+                    <li><a href="" target="_blank">무주군청</a></li>
+                    <li><a href="" target="_blank">무주관광</a></li>
+                    <li><a href="" target="_blank">무주머루와인동굴</a></li>
+                </ul>
+                <ul class="right">
+                    <li><a href="login.html" target="_blank">로그인</a></li>
+                    <li><a href="" target="_blank">회원가입</a></li>
+                    <li><a href="" target="_blank">주문배송정보</a></li>
+                </ul>
+                </nav>
+            </div>
+            <div class="hdWrap" id="mainNav">
+                <a href="index.html" class="logo"><img src="./images/logo.png" alt="로고"></a>
+                <nav class="gnb">
+                    <ul>
+                        <li class="menu">
+                            <a href="" class="dep">MEORU WINE</a>
+                            <ul class="sub">
+                                <li class="subF"><a href="">산머루이야기</a></li>
+                                <li><a href="">ABOUT 머루와인</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu">
+                            <a href="" class="dep">WINE GUIDE</a>
+                            <ul class="sub">
+                                <li class="subF"><a href="">테마별와인추천</a></li>
+                                <li><a href="">WITH 머루와인</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu">
+                            <a href="" class="dep">WINE SHOP</a>
+                            <ul class="sub">
+                                <li class="subF"><a href="">루시올뱅</a></li>
+                                <li><a href="">샤또무주</a></li>
+                                <li><a href="">마지끄무주</a></li>
+                                <li><a href="">붉은진주</a></li>
+                                <li><a href="">구천동머루와인</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu">
+                            <a href="" class="dep">WINE LIFE</a>
+                            <ul class="sub">
+                                <li class="subF"><a href="">무주소식</a></li>
+                                <li><a href="">이벤트</a></li>
+                                <li><a href="">SNS</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu">
+                            <a href="" class="dep">WINE CAVE</a>
+                            <ul class="sub">
+                                <li class="subF"><a href="">동굴소개</a></li>
+                                <li><a href="">동굴소식</a></li>
+                                <li><a href="">동굴체험</a></li>
+                                <li><a href="">찾아오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li class="menuicon"><a href="icoImg"><img src="./images/icon_login.png" alt="로그인"></a></li>
+                        <li class="menuicon"><a href="icoImg"><img src="./images/icon_cart.png" alt="장바구니"></a></li>
+                        <li class="menuicon"><a href="icoImg"><img src="./images/icon_search.png" alt="검색하기"></a></li>
+                    </ul>
+                </nav>
+                <input type="checkbox" id="ck">
+                <label for="ck" class="lstBtn">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </label>                   
+                <nav id="collapse">
+                        <ul class="item">
+                            <li class="collapTit"><h2>MEORU WINE</h2></li>
+                            <li><a href="">산머루이야기</a></li>
+                            <li><a href="">ABOUT 머루와인</a></li>
+                        </ul>
+                        <ul class="item">
+                            <li class="collapTit"><h2>WINE GUIDE</h2></li>
+                            <li><a href="">테마별와인추천</a></li>
+                            <li><a href="">WITH 머루와인</a></li>
+                        </ul>
+                        <ul class="item">
+                            <li class="collapTit"><h2>WINE SHOP</h2></li>
+                            <li><a href="">루시올뱅</a></li>
+                            <li><a href="">샤또무주</a></li>
+                            <li><a href="">마지끄무주</a></li>
+                            <li><a href="">붉은진주</a></li>
+                            <li><a href="">구천동머루와인</a></li>
+                        </ul>
+                        <ul class="item">
+                            <li class="collapTit"><h2>WINE LIFE</h2></li>
+                            <li><a href="">무주소식</a></li>
+                            <li><a href="">이벤트</a></li>
+                            <li><a href="">SNS</a></li>
+                        </ul>
+                        <ul class="item">
+                            <li class="collapTit"><h2>WINE CAVE</h2></li>
+                            <li><a href="">동굴소개</a></li>
+                            <li><a href="">동굴소식</a></li>
+                            <li><a href="">동굴체험</a></li>
+                            <li><a href="">찾아오시는 길</a></li>
+                        </ul>
+                        <label for="ck" id="close"></label>
+                    </nav>               
+            </div>
+        </header>      
+        <section id="con1" class="pg">
+            <ul class="imgBox">
+                <li class="item1">
+                    <h2 class="banTit">신이 만든 최고의 선물 청정지역 무주 산머루</h2>
+                    <a href="" class="detail">VIEW MORE</a>
+                </li>
+                <li class="item2">
+                    <h2 class="banTit">신이 주신 선물 머루와인</h2>
+                    <a href="" class="detail">VIEW MORE</a>
+                </li>
+                <li class="item3">
+                    <h2 class="banTit">무주머루와인동굴</h2>
+                    <a href="" class="detail">VIEW MORE</a>
+                </li>
+            </ul>
+            <ul class="btnBox">
+                <li>
+                    <label for="ra1" class="slBtn item1 on"></label>
+                </li>
+                <li>
+                    <label for="ra2" class="slBtn item2"></label>
+                </li>
+                <li>
+                    <label for="ra3" class="slBtn item3"></label>
+                </li>
+                <li>
+                    <button class="stopBtn"></button>
+                </li>
+            </ul>
+        </section>    
+        <section id="con2" class="pg">
+            <ul class="grid">
+                <li class="col left" id="vs1">
+                    <ul class="imgBox2">
+                        <li class="item1"></li>
+                        <li class="item2"></li>
+                        <li class="item3"></li>
+                        <li class="item4"></li>
+                        <li class="item5"></li>
+                    </ul>
+                    <label class="more"></label>
+                </li>
+                <li class="col right">
+                    <div class="box" id="box11">
+                        <a href=""><img src="./images/con1_box2.png" alt=""></a>
+                    </div>
+                    <div class="box" id="box12">
+                        <a href=""><img src="./images/con1_box3.png" alt=""></a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section id="con3" class="pg">
+            <div class="banner">
+              <ul class="banCon">
+                  <li><h2 class="bannerTit">WITH MEORU WINE</h2></li>
+                  <li><a href="" class="detail">VIEW MORE</a></li>
+              </ul>
+            </div>
+        </section>
+        <section id="con4" class="pg">
+             <ul class="grid">
+                 <li class="col left">
+                    <input type="radio" name="rdo3" id="ra21" class="raIt" >
+                    <input type="radio" name="rdo3" id="ra22" class="raIt">
+                    <input type="radio" name="rdo3" id="ra23" class="raIt" checked>
+                    <input type="radio" name="rdo3" id="ra24" class="raIt">
+                    <label for="ra21" class="colBtn" id="box1">
+                            <div class="colIco">
+                                <img src="./images/ico_camp.png" alt="">
+                                <p class="ban2">캠핑용 와인추천</p>
+                            </div>
+                    </label>
+                    <label for="ra22" class="colBtn" id="box2">
+                            <div class="colIco">
+                                <img src="./images/ico_gift.png" alt="">
+                                <p class="ban2">선물용 와인추천</p>
+                            </div>
+                    </label>
+                    <label for="ra23" class="colBtn" id="box3">
+                            <div class="colIco">
+                                <img src="./images/ico_wine.png" alt="">
+                                <p class="ban2">오늘의 추천와인</p>
+                            </div>
+                    </label>
+                    <label for="ra24" class="colBtn" id="box4">
+                            <div class="colIco">
+                                <img src="./images/ico_lover.png" alt="">
+                                <p class="ban2">연인용 와인추천</p>
+                            </div>
+                    </label>
+                 </li>
+                 <li class="col right">          
+                     <ul class="imgBox3">
+                         <li><a href="" class="bannerItm1"></a></li>
+                         <li><a href="" class="bannerItm2"></a></li>
+                         <li><a href="" class="bannerItm3"></a></li>
+                     </ul>
+                 </li>
+             </ul>
+         </section>
+        <section id="con5" class="pg">
+           <div class="pageWrap">
+                <div class="noti left" id="news">
+                    <h2 class="secTit">무주소식</h2>
+                    <a href="" class="more2"></a>
+                    <span class="newsLine"></span>
+                    <div class="notiTitBox">
+                        <div class="notiIco1"></div>
+                        <div class="rightnoti">
+                            <h3 class="notiTit">운문산 반딧불이 신비탐사 안내</h3>
+                            <p class="notiCom">깜깜한 어둠속 아르다운 불빛을 내는 운문산반딧불이 신비탐사가 시작됩니다. 6월 2일 (토) / 6월 9일 (토), 반딧불이가 많이 나오는 무주</p>
+                        </div>
+                    </div>
+                    <ul class="lstBox">
+                        <li>
+                            <a href="" class="lstTit">제 6회 무주산골 영화제 안내</a>
+                            <span class="date">2018-05-14</span>
+                        </li>
+                        <li>
+                            <a href="" class="lstTit">권도원 휴관 안내</a>
+                            <span class="date">2018-05-06</span>
+                        </li>
+                        <li>
+                            <a href="" class="lstTit">무주 덕유산 리조트 관광곤도라 운영 중단 안내</a>
+                            <span class="date">2018-05-06</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="noti right" id="caveNews">
+                <h2 class="secTit">동굴소식</h2>
+                <a href="" class="more2"></a>
+                <span class="newsLine"></span>
+                <div class="notiTitBox">
+                    <div class="notiIco2"></div>
+                    <div class="rightnoti">
+                        <h3 class="notiTit">무주 챌린지 투어버스 운영</h3>
+                        <p class="notiCom">4월~11월 10:00~16:30 (운영시간 17:30까지) 12월~3월 10:30~15:30(운영시간 16:30까지) 7세 이상 2,000원, 단체 (20이상)1,800원</p>
+                    </div>
+                </div>
+                <ul class="lstBox">
+                    <li>
+                        <a href="" class="lstTit">무주 머루와인 동영상입니다.</a>
+                        <span class="date">2015-04-16</span>
+                    </li>
+                    <li>
+                        <a href="" class="lstTit">머루와인동굴은 모객행위를 하지 않습니다.</a>
+                        <span class="date">2013-01-25</span>
+                    </li>
+                    <li>
+                        <a href="" class="lstTit">머루와인동굴에서 알려드립니다.</a>
+                        <span class="date">2012-08-10</span>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </section>
+        <footer class="ft">
+            <div class="ftWrap">
+                <a href="" class="Flogo"></a>
+                <p class="copyright">
+                    무주군 농업소득과 우)55528 전라북도 무주군 적상면 산성로 359<br>
+                    전화 : 063-322-4720, 2825 팩스 : 063-320-2549 이메일 : exodus@korea.kr<br>
+                    COPYRIGHT(C)2017 MUJU COUNTY ALL RIGHT RESERVED.
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
