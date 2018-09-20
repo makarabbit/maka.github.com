@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>미소지움세탁소</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- 메타폰아이콘 -->
+    <!--Shortcut icon Setting -->
+    <!-- 바로가기 및 홈페이지 상단 왼쪽아이콘 설정하기 -->
+    <!-- Chrome, Safari, IE -->
+    <link rel="shortcut icon" href="./ico/favicon-152.ico">
+    <!-- Firefox, Opera (Chrome and Safari say thanks but no thanks) -->
+    <link rel="icon" href="./ico/favicon-152.png">
+    <!-- Still works in IE6+ series2 -->
+    <link rel="shortcut icon" href="./ico/favicon-152.ico" type="image/vnd.microsoft.icon">
+    <!-- Still works in IE6+ series3 -->
+    <link rel="shortcut icon" href="./ico/favicon-152.ico" type="image/x-icon">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./ico/favicon-152.png">
+    <!-- Favicon for ios Touch Base -->
+    <link rel="apple-touch-icon" sizes="57x57" href="./ico/apple_touch_ico_57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./ico/apple_touch_ico_60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./ico/apple_touch_ico_72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./ico/apple_touch_ico_76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./ico/apple_touch_ico_114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./ico/apple_touch_ico_120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./ico/apple_touch_ico_144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./ico/apple_touch_ico_152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./ico/apple_touch_ico_180x180.png">
+    <!-- Favicon for Android -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Favicon for Desktop --> 
+    <link rel="icon" type="image/png" href="./ico/favicon-16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="./ico/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./ico/favicon-48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="./ico/favicon-64.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="./ico/favicon-128.png" sizes="128x128">
+    <link rel="apple-touch-precomposed" href="./ico/favicon-152.png">
+    <!-- 폰트링크 -->
+    <!-- 스타일 css -->
+    <style type="text/css">
+        * {
+            margin:0;
+            padding:0;
+        }
+        body, html {
+            width:100%;
+            height:100%;
+            overflow-x:hidden;
+        }
+        ul {
+            list-style:none;
+        }
+        a {
+            text-decoration:none;
+        }
+        img {
+            border:0;
+        }
+        .left {
+            float:left;
+        }
+        .right {
+            float:right;
+        }
+        /* 스플래쉬 영역 */
+        .splash {
+            width:100%;
+            height:100%;
+            background-image:url("./images/splash.png");
+            background-size:cover;
+            position:fixed;
+            z-index:9999;
+        }
+        .loading {
+            position:absolute;
+            bottom:10%;
+            left: 30%;
+            width: 0px;
+            height:10px;
+            background-color:#fed966;
+            border-radius:20px;
+        }
+        /*헤더영역 */
+        .hd {
+            width:100%;
+            height:50px;
+            border-bottom:1px solid #43bfdf;
+            box-shadow:0px 2px 10px rgba(9,9,9,0.3);
+            position:fixed;
+            z-index:999;
+        }
+        .hd label {
+            display:block;
+            position:absolute;
+            top:14px;
+        }
+        .hd .lstBtn {
+            display:block;
+            width:24px;
+            height:24px;
+            background-image:url("./images/ico_menu.png");
+            background-repeat:no-repeat;
+            background-position:center center;
+            background-size:cover;
+            left:10px;
+        }
+        .hd .searchBtn {
+            display:block;
+            width:24px;
+            height:24px;
+            background-image:url("./images/ico_search.png");
+            background-repeat:no-repeat;
+            background-position:center center;
+            background-size:cover;
+            right:10px;
+        }
+        .hd .logo {
+            display:block;
+            background-image:url("./images/logo.png");
+            background-repeat:no-repeat;
+            background-position:center center;
+            width:161px;
+            height:40px;
+            margin:5px auto;
+        }
+        
+        
+        
+        /* figure 비주얼 부분 */
+        #vs {
+            clear:both;
+            width:100%;
+            height:auto;
+            padding-top:50px;
+        }
+        #vs .imgBox {
+            width:300%;
+            height:auto;
+        }
+        #vs .imgBox li {
+            width:33.3%;
+            height:auto;
+            float:left;
+            position:relative;
+        }
+        .imgBox li a {
+            display:block;
+            width:100%;
+            height:auto;
+            position:relative;
+        }
+        .imgBox li a img {
+            display:block;
+            width:100%;
+            height:auto;
+        }
+        .banTitle {
+            position:absolute;
+            top:20%;
+            left:calc(calc(100% - 230px) / 2);
+            color:#2ea7df;
+            font-size:24px;
+            font-weight:300;
+        }
+        .banComent {
+            position:absolute;
+            top:36%;
+            left:calc(calc(100% - 290px) / 2);
+            text-align:center;
+            font-size:14px;
+            color:#333;
+        }
+        .icoBox {
+            position:absolute;
+            width:300px;
+            height:auto;
+            top:60%;
+            left:calc(calc(100% - 300px) / 2);
+        }
+        .icoBox li {
+            width:50px;
+            height:auto;
+        }
+        #vs .imgBox .icoBox li img {
+            display:block;
+            width:50px;
+            height:auto;
+            margin:0 auto;
+        }
+        .icoComent {
+            text-align:center;
+            font-size:0.8em;
+            padding:8px;
+            color:#333;
+        }
+        
+        /* 푸터 */
+        .ft {
+            clear:both;
+            background-color:#30c1ef;
+            width:100%;
+            
+        }
+        .fnv {
+            width:100%;
+            height:50px;
+            border-bottom: 1px solid #fff;
+        }
+        .fnv .ftMenu {
+            width:100%;
+        }
+        .fnv .ftMenu li {
+            width:33%;
+            float:left;
+        }
+        .ftMenu li a {
+            display:block;
+            font-size:0.8em;
+            color:#fff;
+            text-align:center;
+            line-height:50px;
+        }
+        .ftCopy {
+            padding:15px;
+            color:#eaf6f9;
+            text-align:center;
+            font-size:0.8em;
+            line-height:2;
+        }
+        .ftCopy a {
+            font-size:20px;
+            color:#fff;
+        }
+        
+        /* 컬랩시블 메뉴 */
+        .collap {
+            width:100%;
+            height:100%;
+            background-color:#fff;
+            position:absolute;
+            top:0;
+            left:-380px;
+            z-index:9999;
+            transition:0.8s;
+        }
+        .colLine {
+            display:block;
+            width:100%;
+            height:5px;
+            background-color:#44c0df;
+        }
+        .colHd {
+            width:100%;
+            height:auto;
+            position:relative;
+        }
+        .colNav {
+            width:100%;
+            height:50px;
+        }
+        .homeIco {
+            display:block;
+            background-image:url("./images/iconset_menu.png");
+            width:20px;
+            height:20px;
+            margin-left:40px;
+            margin-top:20px;
+            background-repeat:no-repeat;
+            background-size: cover;
+            float:left;
+        }
+        .colMenu {
+            width:auto;
+            float:right;
+            margin-right:40px;
+        }
+        .colMenu li{
+            float:left;
+        }
+        .searchIco {
+            display:block;
+            background-image:url("./images/iconset_menu.png");
+            background-position:-48px;
+            width:20px;
+            height:20px;
+            margin-top:20px;
+            background-repeat:no-repeat;
+            background-size: cover;
+        }
+        .closeIco {
+            display:block;
+            background-image:url("./images/iconset_menu.png");
+            background-position:-144px;
+            width:20px;
+            height:20px;
+            margin-left:20px;
+            margin-top:20px;
+            background-repeat:no-repeat;
+            background-size: cover;
+            cursor:pointer;
+        }
+        .colCard {
+            width:300px;
+            height:200px;
+            background-color:#30c1ef;
+            margin:10px auto;
+            border-radius:15px;
+            position:relative;
+            cursor:pointer;
+        }
+        .colTit {
+            font-weight:300;
+            color:#fff;
+            padding-top:34px;
+            padding-left:20px;
+            font-size:20px;
+        }
+        .colTitLine {
+            display:block;
+            width:20px;
+            height:2px;
+            background-color:#fff;
+            position:absolute;
+            left:20px;
+            top:20px;
+        }
+        .conBtn {
+            display:block;
+            width:32px;
+            height:32px;
+            background-image:url("./images/ico_login.png");
+            background-repeat:no-repeat;
+            background-size:cover;
+            position:absolute;
+            right:20px;
+            bottom:20px;
+        }
+        .colLine2 {
+            display:block;
+            width:320px;
+            margin:30px auto;
+            height:2px;
+            background-color:#EDEDEF;
+        }
+        .on {
+            left:0;
+        }
+        .infoLst {
+            width:300px;
+            height: auto;
+            margin:0 auto;
+        }
+        .infoLst li {
+            float:left;
+            width:30%;
+        }
+        .infoLst .colIco {
+            display:block;
+            width:20px;
+            height:20px;
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-position:center center;
+        }
+    </style>
+    <!-- 스크립트 -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $(".loading").animate({"width":"40%"}, 1000); 
+        });
+        setTimeout(function(){
+           $(".splash").fadeOut(400); 
+        }, 2000);
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $(".lstBtn").click(function(){
+              $(".collap").addClass("on"); 
+           });
+            $(".closeIco").click(function(){
+               $(".collap").removeClass("on"); 
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="splash">
+        <section class="loading"></section>
+    </div>
+    <div class="wrap">
+        <header class="hd">
+            <label for="" class="left lstBtn"></label>
+            <a href="" class="logo"></a>
+            <label for="" class="right searchBtn"></label>
+        </header>
+        <main class="content">
+            <figure id="vs">
+                <ul class="imgBox">
+                    <li>
+                        <a href="">
+                            <img src="./images/vImg01.png" alt="배너1">
+                            <h3 class="banTitle">안심되니까, 미소지움</h3>
+                            <p class="banComent">미소지움의 뛰어난 세척력과<br>살균기능으로 최고의 세탁품질을 자신합니다.</p>
+                            <ul class="icoBox">
+                                <li>
+                                    <img src="./images/ico_eco.png" alt="">
+                                    <p class="icoComent">친환경세탁</p>
+                                </li>
+                                <li>
+                                    <img src="./images/ico_hand.png" alt="">
+                                    <p class="icoComent">손빨래추가</p>
+                                </li>
+                                <li>
+                                    <img src="./images/ico_white.png" alt="">
+                                    <p class="icoComent">살균빨래</p>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="" alt="">
+                            <span class="comentBox"></span>
+                            <h3 class="banTitle"></h3>
+                            <p class="banComent"></p>
+                            <span class="point"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="" alt="">
+                            <span class="comentBox"></span>
+                            <h3 class="banTitle"></h3>
+                            <p class="banComent"></p>
+                            <span class="point"></span>
+                        </a>
+                    </li>
+                </ul>
+            </figure>
+            <section class="mainCon">
+                
+            </section>
+            <footer class="ft">
+                <nav class="fnv">
+                    <ul class="ftMenu">
+                        <li><a href="">서비스이용약관</a></li>
+                        <li><a href="">개인정보취급방침</a></li>
+                        <li><a href="">스팸관리정책</a></li>
+                    </ul>
+                </nav>
+                <div class="ftCopy">
+                    <p>
+                        <span>회사명 : 미소지움세탁소</span><br>
+                        <span>주소 : 충남 계룡시 금암동 <br>신성미소지움아파트 1차 상가 1층</span>
+                    </p>
+                    <p>
+                        <span>대표 : 박오성</span><br>
+                        <span>전화 : <a href="tel:042-841-1893">042-841-1893</a></span>
+                    </p>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <div class="collap" id="lstColap">
+        <span class="colLine"></span>
+        <header class="colHd">
+            <nav class="colNav">
+                <a href="index.html" class="homeIco"></a>
+                <ul class="colMenu">
+                    <li><span class="searchIco"></span></li>
+                    <li><span class="closeIco"></span></li>
+                </ul>
+            </nav>
+            <div class="colCard">
+                <span class="colTitLine"></span>
+                <h3 class="colTit">로그인을 해주세요</h2>
+                <a href="" class="conBtn"></a>
+            </div>
+        </header>
+        <span class="colLine2"></span>
+        <section class="infoBox">
+            <ul class="infoLst">
+                <li>
+                    <a href=""><span class="colIco item1"></span>내정보</a>
+                </li>
+                <li>
+                    <a href=""><span class="colIco item2"></span>적립금</a>
+                </li>
+                <li>
+                    <a href=""><span class="colIco item3"></span>나의 세탁</a>
+                </li>
+                <li>
+                    <a href=""><span class="colIco item4"></span>공지사항</a>
+                </li>
+                <li>
+                    <a href=""><span class="colIco item5"></span>1:1문의</a>
+                </li>
+                <li>
+                    <a href=""><span class="colIco item6"></span>미소지움 이야기</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
