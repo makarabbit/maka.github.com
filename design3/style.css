@@ -1,0 +1,283 @@
+@charset "utf-8";
+* {
+    margin: 0; 
+    padding: 0;
+}
+::-webkit-scrollbar {
+    display:none
+};
+body, html {
+    width:100%;
+    height: 100%;
+    -ms-overflow-style:none;
+}
+ul {
+    list-style:none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    border:0;
+}
+.Wrap {
+    width:100%;
+    height:100%;
+    position:relative;
+}
+.left {
+    float:left;
+}
+.right {
+    float:right;
+}
+.ckItem, .raItem {
+    display:none;
+}
+
+/* 메뉴바 */
+.hd {
+    width:100%;
+    height:100px;
+}
+.hdContain {
+    width:1600px;
+    height:40px;
+    margin:2px auto;
+}
+.tnb li {
+    float:left;
+    padding:2px 10px;
+}
+.tnb li a, .tnb li label {
+    color:#f0f0f0;
+    font-size:14px;
+    line-height:40px;
+}
+.tnb li:first-child a:after, .tnb li:first-child label:after {
+    content:"|";
+    padding-left:20px;
+    font-size:14px;
+    color:#f0f0f0;
+}
+.tnb li label {
+    cursor:pointer;
+}
+/* 메인메뉴 */
+.hdWrap {
+    height:60px;
+    width:100%;
+    clear:both;
+    border-bottom:1px solid white;
+}
+.gnb {
+    width:1600px;
+    margin:0 auto;
+}
+.mainNav {
+    width:1200px;
+    margin:4px auto;
+    float:left;
+    padding-left:100px;
+}
+.logo {
+    display:block;
+    width:200px;
+    height:31px;
+    background-image:url("./images/logo_color.png");
+    background-repeat:no-repeat;
+    float:left;
+}
+.mainNav li {
+    float:left;
+    width:20%;
+}
+.mainNav li label {
+    display:block;
+    color:#fff;
+    cursor:pointer;
+    font-size:18px;
+}
+/* 서브메뉴 */
+.mainNav li .raItem:checked ~ .sub {
+    display:block;
+}
+.mainNav li .raItem:checked ~ label {
+    color:#b2bb37;
+}
+.mainNav .sub {
+    position:absolute;
+    width:1600px;
+    height:400px;
+    max-width:1920px;
+    min-width:1280px;
+    top:105px;
+    left:calc(calc(100% - 1600px) / 2);
+    background-color:#fff;
+    z-index:99;
+    display:none;
+}
+.sub .subFrame {
+    width:20%;
+    height:400px;
+    padding-left:10%;
+}
+.subMenuTit {
+    padding-top:14%;
+    text-align:left;
+    font-size:20px;
+    font-weight:300;
+    float:right;
+    line-height:1.5;
+}
+.subFrame img {
+    display:block;
+    padding-top:30px;
+    clear:both;
+    float:right;
+}
+.sub .subMenu {
+    width:60%;
+    height:400px;
+    padding-left:50px;
+}
+.subMenu li {
+    float:left;
+    padding-right:50px;
+    padding-top:40px;
+}
+.subMenu .subMenuCateTit {
+    text-align:center;
+    font-size:16px;
+    font-weight:300;
+    padding-top:16px;
+    color:#333;
+}
+
+/* 컬랩시블메뉴 */
+.collapMap {
+    position:absolute;
+    top:0;
+    left:0;
+    display:none;
+    z-index:999;
+}
+/* 슬라이더 부분 */
+.content {
+    width: 100%;
+    height: 100%;
+    position:relative;
+}
+.vs {
+    position:relative;
+    width:100%;
+    height:100%;
+}
+.imgBox {
+    width:300%;
+    position:absolute;
+    top:-120px;
+    left:0;
+    z-index:-999;
+}
+.imgBox li{
+    float:left;
+    position:relative;
+}
+.txtBox {
+    position:absolute;
+    z-index:999;
+    width:700px;
+    height:300px;
+    left:20%;
+    top:calc(calc(100% - 300px) / 2);
+}
+.banTit {
+    color:#fff;
+    font-size:70px;
+    line-height:1.5;
+}
+.banTxt {
+    color:#fff;
+    font-size:40px;
+    line-height: 1.5;
+}
+.more {
+    display:block;
+    width:120px;
+    height:40px;
+    border-radius:40px;
+    border:2px solid #fff;
+    margin-top:20px;
+    text-align:center;
+    color:#fff;
+    line-height:40px;
+    font-size:16px;
+}
+.more:hover {
+    background-color:#fff;
+    color:#333;
+}
+.mainSlider {
+    width: 100%;
+    position:relative;
+}
+/* news_bar */
+.collapFrame {
+    position:fixed;
+    z-index:9999;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background:rgba(0,0,0,0.4);
+    display:none;
+}
+.cnb {
+    width:900px;
+    height:280px;
+    position:absolute;
+    top: 40%;
+    right:-70px;
+    border-radius:0px 25px 25px 0px;
+    background-color:#f0f0f0;
+    padding:40px;
+}
+.cnb li {
+    float:left;
+}
+.collapImgFrame {
+    width:300px;
+}
+.collapImgFrame img {
+    width:100%;
+    display:block;
+    margin-top:40px;
+}
+.collapTxtFrame {
+    width:400px;
+    padding:35px;
+}
+
+#collapCk:checked ~ .collapFrame {
+    left:0;
+}
+#collapCk:checked ~ .collapFrame .cnb {
+    left:0;
+    right:auto;
+}
+.wTxt {
+    color:#333;
+}
+.closeBtn {
+    display:block;
+    background-image: url("images/close_btn.png");
+    width:30px;
+    height:30px;
+    cursor:pointer;
+    float:right;
+}
+.collapDesc {
+    font-size:12px;
+    margin-top:20px;
+}
