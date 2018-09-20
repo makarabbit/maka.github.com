@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TreeHut</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700|Noto+Sans:400,700');
+        * {
+            margin:0;
+            padding:0;
+        }
+        body, html {
+            width:100%;
+            height:100%;
+            font-family: 'Noto Sans', sans-serif;
+        }
+        ul {
+            list-style:none;
+        }
+        a {
+            text-decoration:none;
+            color:#444343;
+        }
+        button, label, input[type=button], input[type=submit], input[type=reset]{
+            outline:0;
+            border:0;
+        }
+        img {
+            border:0;
+        }
+        .Wrap {
+            width:100%;
+            height:100%;
+            background-color:#333;
+            position:relative;
+        }
+        .pg {
+            width:100%;
+            height:100%;
+            position:relative;
+        }
+        .left {
+            float:left;
+        }
+        .right {
+            float:right;
+        }
+        .pageWrap {
+            width:1600px;
+            margin:0px auto;
+            clear:both;
+            position:relative;
+        }
+        #page1 {
+            width:100%;
+            position:absolute;
+        }
+        .more {
+            font-size:18px;
+            border-bottom:1px solid #fff;
+        }
+        .BoxT {
+            font-family: 'Nanum Myeongjo', serif;
+            font-weight:bold;
+            font-size:74px;
+            color:#444343;
+            line-height:1.1;
+        }
+        .MenuT {
+            font-size:22px;
+            font-weight:bold;
+            color:#9abe2d;
+            line-height:1.2;
+        }
+        .SubT {
+            color:#444343;
+            font-size:16px;
+            line-height:4;
+        }
+        .BoxCon {
+            color:#444343;
+            line-height:1.6;
+            padding-top:20px;
+            font-size:16px;
+        }
+        .imgBox .more {
+            display:block;
+            border:2px solid #9abe2d;
+            border-radius:20px;
+            width:120px;
+            height:34px;
+            margin-top:20px;
+            text-align:center;
+            line-height:30px;
+            background-color:transparent;
+            box-sizing: border-box;
+        }
+        .imgBox .more:hover {
+            background-color:#9abe2d;
+            transition:0.5s;
+            color:#fff;
+            box-sizing: border-box;
+        }
+    </style>
+    <style>
+        /* 헤더영역 */
+        .hd {
+            width:100%;
+            height:100px;
+            position:relative;
+            z-index:1000;
+        }
+        .hdWrap {
+            width:1600px;
+            margin:0px auto;
+            padding-top:35px;
+        }
+        .ckItem {
+            display:none;
+        }
+        .open {
+            display:block;
+            background-color:#9abe2d;
+            width:48px;
+            height:40px;
+            cursor:pointer;
+            padding-top:8px;
+        }
+        .open .line {
+            display:block;
+            width:30px;
+            margin-left:8px;
+            height:3px;
+            margin-top:6px;
+            background:#fff;
+            transition:0.5s;
+        }
+        .open .line:nth-child(2) {
+            width:18px;   
+        }
+        .open:hover .line:nth-child(2) {
+            width:30px;
+        }
+        .gnb {
+            width:400px;
+            height:auto;
+        }
+        .gnb li {
+            float:left;
+            padding-right:20px;
+        }
+        .popBox {
+            position:fixed;
+            z-index:9999;
+            top:0;
+            left:-110%;
+            transition:0.8s;
+            width:40%;
+            height:100%;
+            background-color:#fff;
+        }
+        .close {
+            display:block;
+            width:50px;
+            height:50px;
+            background-image:url("./images/close_btn.png");
+            background-position:center center;
+            background-repeat:no-repeat;
+            cursor:pointer;
+            transition:0.4s;
+            transform:rotate(0deg);
+        }
+        .popBox ul {
+            clear:both;
+        }
+        .popBox .popIco {
+            padding-left:160px;
+            padding-top:35px;
+        }
+        .popBox .popIco li {
+            float: left;
+            padding-right:20px;
+        }
+        .popBox .popMain {
+            padding-left:160px;
+            padding-top:50px;
+        }
+        .popBox .popmenu {
+            display:block;
+            font-size:26px;
+            padding:10px;
+            color:#4f4f51;
+            cursor:pointer;
+        }
+        .popBox .popmenu label {
+            position:relative;
+            z-index:5000000;
+        }
+        .popSub {
+            display:none;
+            right:30%;
+            position:absolute;
+            margin-top:-34px;
+        }
+        .popSub li {
+            clear:both;
+        }
+        .popSub li a {
+            display:block;
+            height:20px;
+            line-height:20px;
+            padding-bottom:10px;
+            font-size:20px;
+        }
+        #sub1:checked ~ .popSub {
+            display:block;
+        }
+        #sub2:checked ~ .popSub {
+            display:block;
+        }
+        #sub4:checked ~ .popSub {
+            display:block;
+        }
+        #sub1:checked ~ .popmenu {
+            color:#9abe2d;
+        }
+        #sub2:checked ~ .popmenu {
+            color:#9abe2d;
+        }
+        #sub3:checked ~ .popmenu {
+            color:#9abe2d;
+        }
+        #sub4:checked ~ .popmenu {
+            color:#9abe2d;
+        }
+        .close:hover {
+            transform:rotate(180deg);
+        }
+        #menu_ck:checked ~ .popBox {
+            left:0;
+        }
+        #RNav ul {
+            clear:both;
+            float:right;
+        }
+        #RNav ul li {
+            float:left;
+            margin-top:4px;
+            padding-left:30px;
+        }
+        #RNav ul li a {
+            display:block;
+            color:#fff;
+        }
+        #RNav ul li a.tnbActive {
+            color:#a8a8a8;
+        }
+        #RNav ul li a.tnbActive:before {
+            content:"|";
+            padding-right:20px;
+        }
+        .bnb a {
+            display:block;
+            font-size:20px;
+        }
+    </style>
+    <style>
+        /* 슬라이더 */
+        #page1 {
+            top:0;
+        }
+        .imgSlide {
+            position:absolute;
+            width:100%;
+            height:100%;
+            overflow:hidden;
+        }
+        .gallery {
+            position:absolute;
+            width:300%;
+            height:100%;
+        }
+        .gallery img {
+            display:block;
+            width:33.34%;
+            height:auto;
+            position:absolute;
+        }
+        .banCon {
+            background-color:transparent;
+            height: 100%;
+        }
+        .banTitleBox {
+            width: 0%;
+            float:left;
+            height:100%;
+            opacity:0;
+            transition-duration:0.2s, 0.4s;
+            position:absolute;
+            left:0;
+            top:0;
+            background-color:transparent;
+            transition-property:width, opacity;
+            transition-delay:0.1s, 0.1s;
+        }
+        .banTitleBox.on {
+            width:25%;
+            opacity:1;
+        }
+        .banTitleBox .banTit {
+            top:30%;
+            transition-duration:0.6s;
+            opacity:0;
+            transition-delay: 0.3s;
+            left:65%;
+            clear:both;
+            position:absolute;
+            padding-top:70%;
+        }
+        .banTitleBox.on .banTit {
+            padding-top:0;
+            opacity:1;
+        }
+        .next, .prev, .paging { 
+            z-index:999; 
+            position:absolute; 
+            display:block;
+            width:50px; 
+            height:50px; 
+            top:50%; 
+            background-repeat:no-repeat; 
+            cursor:pointer; 
+        }
+        .next {
+            right:10%;
+            background-image:url("./images/right_btn.png");
+            background-repeat:no-repeat;
+        }
+        .prev {
+            left:10%;
+            background-image:url("./images/left_btn.png");
+            background-repeat:no-repeat;
+        }
+        .paging {
+            top:85%;
+            left:50%;
+            width:150px;
+            height:30px;
+        }
+        .paging a, .paging button {
+            display:block;
+            margin:5px;
+            float:left;
+            text-align:center;
+            border-radius:14px;
+            font-size:10px;
+            line-height:10px;
+            color:transparent;
+            background-color:transparent;
+            width:16px;
+            height:16px;
+            background-repeat: no-repeat;
+            background-position:center center;
+            cursor:pointer;
+        }
+        .paging a {
+            border:2px solid #fff;
+            width:12px;
+            height:12px;
+            background-color:transparent;
+        }
+        .paging a.paging_on {
+            background-color:#fff;
+            border:0;
+            width:16px;
+            height:16px;
+        }
+        .playBtn {
+            background-image:url("./images/play_btn.png");
+            background-size:12px 12px;
+        }
+        .playBtn[control-toggle="play"] { 
+            background-position:center center; 
+        }
+        .playBtn[control-toggle="stop"] { 
+            background-image:url("./images/stop_btn.png");
+            background-position:center center; 
+        }
+        .banTitleBox .more { 
+            display:block;  
+            padding-top:70%;
+            left:65%; 
+            top:70%; 
+            position:absolute;  
+            opacity:0;
+            color:#fff; 
+            clear:both; 
+            transition-duration:0.5s; 
+            transition-delay:0.3s; 
+        }
+        .banTitleBox.on .more {
+            padding-top:0;
+            opacity:1;
+        }
+    </style>
+    <style>
+        /* 2페이지 */
+        #page2 {
+            height:100%;
+            margin-top:964px;
+            overflow:hidden;
+        }
+        #page2 .pageWrap {
+            width:1600px;
+            height:974px;
+            overflow:hidden;
+            top:10%;
+        }
+        .box {
+            width:1400px;
+            height:auto;
+            margin:0 auto;
+            overflow:hidden;
+            position:relative;
+        }
+        /*
+        .raIt {
+            display:none;
+        }
+        .btnBox {
+            width:500%;
+            float:left;
+            position:absolute;
+            z-index:999;
+        }
+        .btnBox li {
+            width:1280px;
+        }
+        .LGbtn {
+            display:block;
+            background-image:url(./images/leftG_btn.png);
+            width:50px;
+            height:50px;
+            background-repeat:no-repeat;
+            cursor:pointer;
+            left:10px;
+            margin-top:calc(calc(100% - 960px) / 2);
+            position:absolute;
+            z-index:8888;
+        }
+        .RGbtn {
+            display:block;
+            background-image:url(./images/rightG_btn.png);
+            width:50px;
+            height:50px;
+            background-repeat:no-repeat;
+            cursor:pointer;
+            right:10px;
+            margin-top:calc(calc(100% - 960px) / 2);
+            position:absolute;
+            z-index:8888;
+        }
+        */
+        .conBtn {
+            display:block;
+            position:absolute;
+            width:50px;
+            height:50px;
+            cursor:pointer;
+        }
+        
+        .imgBox {
+            width:6400px;
+            margin:0 auto;
+        }
+        .imgBox li {
+            width:1280px;
+            height:610px;
+            float:left;
+        }
+        #Box1 {
+            width:750px;
+            height:610px;
+        }
+        #Box2 {
+            padding-top:38px;
+            width:470px;
+            height:610px;
+            margin-left:20px;
+        }
+        /*
+        .pCon1 {
+            width:500%;
+            height:572px;
+            margin:0 auto;
+            width:1280px;
+            overflow:hidden;
+        }
+        .pCon1 li {
+            float:left;
+            position:relative;
+        }
+        #Box1 {
+            widows: 688px;
+            height:572px;
+        }
+        #Box2 {
+            padding-top:38px;
+            width:512px;
+            height:572px;
+            margin-left:60px;
+        }
+        .item1 .line {
+            width:200px;
+            height:2px;
+            background-color:#9abe2d;
+            position:absolute;
+            z-index:100;
+            left:42%;
+            bottom:35%;
+        }
+        */
+    </style>
+    <style>
+        /* 왼쪽 페이지 버튼 */
+        .slideBtn {
+            width:30px;
+            height:150px;
+            position:fixed;
+            z-index:9998;
+            left:2%;
+            top:50%;
+        }
+        .sBtn li{
+            clear:both;
+            width:20px;
+            height:20px;
+            padding:5px;
+        }
+        .circle {
+            display:block;
+            border:2px solid #fff;
+            border-radius:20px;
+            background-color:transparent;
+            width:16px;
+            height:16px;
+        }
+        .active {
+            background-color:#fff;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="ktslider2.js"></script>
+    <script src="txtslider2.js"></script>
+    <script>
+        //한 페이지씩 스크롤
+        $(document).ready(function () {
+        	var sc_pg = parseInt($(window).height());
+			$(window).on('mousewheel', function(e){
+				if(e.originalEvent.wheelDelta < 0) {
+					$('html, body').not(":animated").animate({
+                        scrollTop : '+='+sc_pg+'px'},800);
+				} else {
+					$('html, body').not(":animated").animate({
+                        scrollTop : '-='+sc_pg+'px'},800);
+				}
+				return false;
+			});
+			//$(window).mousewheel
+		});
+    </script>
+</head>
+<body>
+    <div class="Wrap">
+        <header class="hd">
+            <div class="hdWrap">
+                <nav class="left" id="LNav">
+                   <input type="checkbox" id="menu_ck" class="ckItem">
+                    <ul class="gnb">
+                       <li>
+                        <label for="menu_ck" class="open">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </label>
+                        </li>
+                        <li>
+                        <a href="index.html" class="logo">
+                            <img src="./images/logo_menu.png" alt="트리헛로고">
+                        </a>
+                        </li>
+                    </ul>
+                    <div class="popBox">
+                           <ul class="popIco">  
+                            <li>
+                                <label for="menu_ck" class="close"></label>
+                            </li>
+                            <li>
+                                <a href="index.html" class="logo"><img src="./images/logo_coll.png" alt="트리헛로고"></a>
+                            </li>
+                           </ul>       
+                            <ul class="popMain">
+                                <li>
+                                   <input type="checkbox" id="sub1" class="ckItem">
+                                    <label for="sub1" class="popmenu">About Us</label>
+                                    <ul class="popSub item1">
+                                        <li><a href="">Vision</a></li>
+                                        <li><a href="">Commitment</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                   <input type="checkbox" id="sub2" class="ckItem">
+                                    <label for="sub2" class="popmenu">Product</label>
+                                    <ul class="popSub item2">
+                                        <li><a href="">바디스크럽</a></li>
+                                        <li><a href="">바디버터</a></li>
+                                        <li><a href="">바디로션</a></li>
+                                        <li><a href="">바디워시</a></li>
+                                        <li><a href="">스킨케어</a></li>
+                                        <li><a href="">배쓰밤&amp;솔트</a></li>
+                                        <li><a href="">오일&amp;스프레이</a></li>
+                                        <li><a href="">기프트세트</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="sub3" class="ckItem">
+                                     <label for="sub3" class="popmenu">Fragrances</label>
+                                </li>
+                                <li>
+                                   <input type="checkbox" id="sub4" class="ckItem">
+                                    <label for="sub4" class="popmenu">Meet Us</label>
+                                    <ul class="popSub item4">
+                                        <li><a href="">FAQ</a></li>
+                                        <li><a href="">Contact Us</a></li>
+                                        <li><a href="">매장안내</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                </nav>
+                <nav class="right" id="RNav">
+                    <ul class="tnb">
+                        <li><a href="index.html" >한국어</a></li>
+                        <li><a href="index_en.html" class="tnbActive">영어</a></li>
+                    </ul>
+                    <ul class="bnb">
+                        <li><a href="sub_com.html">Commitment</a></li>
+                        <li><a href="sub_pro.html">Product</a></li>
+                        <li><a href="sub_meet.html">Meet Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="slideBtn">
+            <ul class="sBtn">
+                <li><a href="#page1" class="circle active"></a></li>
+                <li><a href="#page2" class="circle"></a></li>
+                <li><a href="#page3" class="circle"></a></li>
+                <li><a href="#page4" class="circle"></a></li>
+                <li><a href="#page5" class="circle"></a></li>
+            </ul>
+        </div>
+        <section class="pg" id="page1">
+            <div class="pageWrap imgSlide" id="visual">
+             <p class="prev"></p>
+             <p class="next"></p>
+             <div class="gallery">
+                 <img src="./images/vimg_1.png" alt="배너1">
+                 <img src="./images/vimg_2.png" alt="배너2">
+             </div>
+            <ul class="banCon">
+                <li class="banTitleBox">
+                    <span class="banTit"><img src="./images/vtxt_01.png" alt=""></span>
+                    <a href="" class="more">더 보기 ></a>
+                </li>
+                <li class="banTitleBox">
+                    <span class="banTit"><img src="./images/vtxt_02.png" alt=""></span>
+                    <a href="" class="more">더 보기 ></a>
+                </li>
+            </ul>
+            <p class="paging"></p>    
+            </div>
+        </section>
+        <section class="pg" id="page2">
+            <div class="pageWrap">
+              <!-- 레이블태그 인풋 
+               <input type="radio" name="rdo1" class="raIt" id="ra1">
+               <input type="radio" name="rdo1" class="raIt" id="ra2">
+               <input type="radio" name="rdo1" class="raIt" id="ra3">
+               <input type="radio" name="rdo1" class="raIt" id="ra4">
+               <input type="radio" name="rdo1" class="raIt" id="ra5">
+                <div class="box">
+                   <!-- css레이블 버튼형식 
+                    <ul class="btnBox">
+                        <li>
+                            <label for="ra2" class="right RGbtn"></label>
+                        </li>
+                        <li>
+                            <label for="ra1" class="left LGbtn"></label>
+                            <label for="ra3" class="right RGbtn"></label>
+                        </li>
+                        <li>
+                            <label for="ra2" class="left LGbtn"></label>
+                            <label for="ra4" class="right RGbtn"></label>
+                        </li>
+                        <li>
+                            <label for="ra3" class="left LGbtn"></label>
+                            <label for="ra5" class="right RGbtn"></label>
+                        </li>
+                        <li>
+                            <label for="ra4" class="left LGbtn"></label>
+                        </li>
+                    </ul>
+                    -->
+                    <button class="leftBtn conBtn"></button>
+                    <ul class="imgBox">
+                        <li>
+                            <div class="left" id="Box1">
+                                <img src="./images/cimg_01.png" alt="">
+                            </div>
+                            <div class="right" id="Box2">
+                                <p class="MenuT">Fragrances</p>
+                                <p class="SubT">향기저널 #1</p>
+                                <h2 class="BoxT">Almond<br>&amp;<br>Honey</h2>
+                                <p class="line"></p>
+                                <p class="BoxCon">자연에서 나오는 저자극성의 달콤한 아몬드 오일은 건강한 피부를 위한 강력한 항산화제이며 콜라겐 생성을 자극합니다. 꿀은 피부상태를 치유하기 위해 수천 년 동안 사용왔으며 예로부터 감염을 예방하고 자연적으로 치유과정을 가속화합니다. </p>
+                                <a href="" class="more">VIEW MORE</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left" id="Box1">
+                                <img src="./images/cimg_02.png" alt="">
+                            </div>
+                            <div class="right" id="Box2">
+                                <p class="MenuT">Fragrances</p>
+                                <p class="SubT">향기저널 #2</p>
+                                <h2 class="BoxT">BRAZILIAN <br> NUT</h2>
+                                <p class="line"></p>
+                                <p class="BoxCon">브라질 너트 오일은 셀레늄과 같은 비타민과 영양소가 풍부하여 빛나는 피부의 세포 회전율을 향상시킵니다. 또한 피부안의 염증을 줄여주며, 주름을 막아주는 콜라겐을 생성합니다. 필수 지방산과 항산화 물질인 마카다미아씨 오일은 건강한 세포를 도아 피부의 노화를 감소시킵니다.</p>
+                                <a href="" class="more">VIEW MORE</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left" id="Box1">
+                                <img src="./images/cimg_03.png" alt="">
+                            </div>
+                            <div class="right" id="Box2">
+                                <p class="MenuT">Fragrances</p>
+                                <p class="SubT">향기저널 #3</p>
+                                <h2 class="BoxT">FIG &amp; OLIVE</h2>
+                                <p class="line"></p>
+                                <p class="BoxCon">무화과는 칼슘과 마그네슘을 함유하여 피부 건강을 증진시키고 젊어지게 합니다. 오메가3 함량이 높기 때문에 피부 보습을 유지할 수 있습니다</p>
+                                <a href="" class="more">VIEW MORE</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left" id="Box1">
+                                <img src="./images/cimg_04.png" alt="">
+                            </div>
+                            <div class="right" id="Box2">
+                                <p class="MenuT">Fragrances</p>
+                                <p class="SubT">향기저널 #4</p>
+                                <h2 class="BoxT">Coconut<br>&amp;<br>Lime</h2>
+                                <p class="line"></p>
+                                <p class="BoxCon">코코넛 추출물은 자연적으로 조직 복구에 필요한 단백질을 함유하고 있어 피부의 건강을 유지시키고 젊어지게 합니다 <br> 라임 추출물은 모공을 좁게 만들어  모공의 기름 생성을 줄여주며 피부톤을 더욱 밝게 만들어 줍니다</p>
+                                <a href="" class="more">VIEW MORE</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left" id="Box1">
+                                <img src="./images/cimg_05.png" alt="">
+                            </div>
+                            <div class="right" id="Box2">
+                                <p class="MenuT">Fragrances</p>
+                                <p class="SubT">향기저널 #5</p>
+                                <h2 class="BoxT">CHERRY <br> BLOSSOM</h2>
+                                <p class="line"></p>
+                                <p class="BoxCon">벚꽃추출물은 피부를 밝게 해주는 고농축 비타민C가 들어 있으며 천연 항 박테리아 성분이 여드름과 싸우고 독소를 제거합니다. 핑크 히말라야 소금은 혈액순환을 촉진하고 근육통을 진정시키며 염증이 있는 피부를 편안하도록 도와주는 효과가 있습니다.
+                                <a href="" class="more">VIEW MORE</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="rightBtn conBtn"></button>
+                </div>
+            </div>
+        </section>
+        <!--
+        <section class="pg" id="page2">
+            <div class="pageWrap">
+               <p class="prevG">prev</p>
+               <p class="nextG">next</p>
+                <ul class="pCon1">
+                    <li class="item1">
+                        <div class="left" id="Box1">
+                            <img src="./images/cimg_1.png" alt="">
+                        </div>
+                        <div class="right" id="Box2">
+                            <p class="MenuT">Fragrances</p>
+                            <p class="SubT">향기저널 #1</p>
+                            <h2 class="BoxT">Almond<br>&amp;<br>Honey</h2>
+                            <p class="line"></p>
+                            <p class="BoxCon">자연에서 나오는 저자극성의 달콤한 아몬드 오일은 건강한 피부를 위한 강력한 항산화제이며 콜라겐 생성을 자극합니다. 꿀은 피부상태를 치유하기 위해 수천 년 동안 사용왔으며 예로부터 감염을 예방하고 자연적으로 치유과정을 가속화합니다. </p>
+                            <a href="" class="more">제품보기</a>
+                        </div>
+                    </li>
+                    <li class="item2">
+                        <div class="left" id="Box1">
+                            <img src="./images/cimg_2.png" alt="">
+                        </div>
+                        <div class="right" id="Box2">
+                            <p class="MenuT">Fragrances</p>
+                            <p class="SubT">향기저널 #2</p>
+                            <h2 class="BoxT">BRAZILIAN <br> NUT</h2>
+                            <p class="line"></p>
+                            <p class="BoxCon">브라질 너트 오일은 셀레늄과 같은 비타민과 영양소가 풍부하여 빛나는 피부의 세포 회전율을 향상시킵니다. 또한 피부안의 염증을 줄여주며, 주름을 막아주는 콜라겐을 생성합니다. 필수 지방산과 항산화 물질인 마카다미아씨 오일은 건강한 세포를 도아 피부의 노화를 감소시킵니다.</p>
+                            <a href="" class="more">제품보기</a>
+                        </div>
+                    </li>
+                    <li class="item3">
+                        <div class="left" id="Box1">
+                        <img src="" alt="">
+                        </div>
+                        <div class="right" id="Box2">
+                            <p class="MenuT">Fragrances</p>
+                            <p class="SubT">향기저널 #3</p>
+                            <h2 class="BoxT">FIG &amp; OLIVE</h2>
+                            <p class="line"></p>
+                            <p class="BoxCon">무화과는 칼슘과 마그네슘을 함유하여 피부 건강을 증진시키고 젊어지게 합니다. 오메가3 함량이 높기 때문에 피부 보습을 유지할 수 있습니다</p>
+                            <a href="" class="more">제품보기</a>
+                        </div>
+                    </li>
+                    <li class="item4">
+                        <div class="left" id="Box1">
+                            <img src="" alt="">
+                        </div>
+                        <div class="right" id="Box2">
+                            <p class="MenuT">Fragrances</p>
+                            <p class="SubT">향기저널 #4</p>
+                            <h2 class="BoxT">Coconut<br>&amp;<br>Lime</h2>
+                            <p class="line"></p>
+                            <p class="BoxCon">코코넛 추출물은 자연적으로 조직 복구에 필요한 단백질을 함유하고 있어 피부의 건강을 유지시키고 젊어지게 합니다 <br> 라임 추출물은 모공을 좁게 만들어  모공의 기름 생성을 줄여주며 피부톤을 더욱 밝게 만들어 줍니다</p>
+                            <a href="" class="more"></a>
+                        </div>
+                    </li>
+                    <li class="item5">
+                        <div class="left" id="Box1"><img src="" alt=""></div>
+                        <div class="right" id="Box2">
+                            <p class="MenuT">Fragrances</p>
+                            <p class="SubT">향기저널 #5</p>
+                            <h2 class="BoxT">CHERRY <br> BLOSSOM</h2>
+                            <p class="line"></p>
+                            <p class="BoxCon">벚꽃추출물은 피부를 밝게 해주는 고농축 비타민C가 들어 있으며 천연 항 박테리아 성분이 여드름과 싸우고 독소를 제거합니다. 핑크 히말라야 소금은 혈액순환을 촉진하고 근육통을 진정시키며 염증이 있는 피부를 편안하도록 도와주는 효과가 있습니다.
+                            <a href="" class="more"></a>
+                        </div>
+                    </li>
+                </ul>
+               <p class="pagingB"></p>
+            </div>
+        </section>
+        -->
+        
+        <!-- 기다려봐
+        <section class="pg" id="page3">
+            <div class="pageWrap"></div>
+        </section>
+        <section class="pg" id="page4">
+            <div class="pageWrap"></div>
+        </section>
+        <section class="pg" id="page5">
+            <div class="pageWrap"></div>
+        </section>
+        <section class="footer">
+            <div class="ftWrap"></div>
+        </section>
+        -->
+    </div>
+</body>
+</html>
