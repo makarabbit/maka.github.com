@@ -10,6 +10,7 @@ body, html {
     width:100%;
     height: 100%;
     -ms-overflow-style:none;
+    min-width:1400px;
 }
 ul {
     list-style:none;
@@ -39,9 +40,13 @@ img {
 .hd {
     width:100%;
     height:100px;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
 }
 .hdContain {
-    width:1600px;
+    width:1400px;
     height:40px;
     margin:2px auto;
 }
@@ -71,11 +76,11 @@ img {
     border-bottom:1px solid white;
 }
 .gnb {
-    width:1600px;
+    width:1400px;
     margin:0 auto;
 }
 .mainNav {
-    width:1200px;
+    width:1000px;
     margin:4px auto;
     float:left;
     padding-left:100px;
@@ -107,12 +112,10 @@ img {
 }
 .mainNav .sub {
     position:absolute;
-    width:1600px;
+    width:1400px;
     height:400px;
-    max-width:1920px;
-    min-width:1280px;
     top:105px;
-    left:calc(calc(100% - 1600px) / 2);
+    left:calc(calc(100% - 1400px) / 2);
     background-color:#fff;
     z-index:99;
     display:none;
@@ -165,22 +168,21 @@ img {
 /* 슬라이더 부분 */
 .content {
     width: 100%;
-    height: 100%;
-    position:relative;
+    height:100%;
 }
 .vs {
-    position:relative;
     width:100%;
-    height:100%;
+    height:990px;
+    margin-top:-70px;
 }
 .imgBox {
     width:300%;
-    position:absolute;
-    top:-120px;
-    left:0;
-    z-index:-999;
+    height:100%;
+    overflow-y:hidden;
 }
 .imgBox li{
+    width:33.3333%;
+    height:100%;
     float:left;
     position:relative;
 }
@@ -190,12 +192,13 @@ img {
     width:700px;
     height:300px;
     left:20%;
-    top:calc(calc(100% - 300px) / 2);
+    top:400px;
 }
 .banTit {
     color:#fff;
     font-size:70px;
     line-height:1.5;
+    font-weight:300;
 }
 .banTxt {
     color:#fff;
@@ -213,14 +216,88 @@ img {
     color:#fff;
     line-height:40px;
     font-size:16px;
+    transition:0.3s;
 }
 .more:hover {
-    background-color:#fff;
-    color:#333;
+    background-color:#bec231;
+    border:2px solid #bec231;
+    color:#fff;
 }
-.mainSlider {
-    width: 100%;
-    position:relative;
+.btnWrap {
+    width:100%;
+    height:80px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    background-color:#bec231;
+}
+.btnBox {
+    width:1400px;
+    height:80px;
+    margin:0 auto;
+}
+.btnBox li {
+    float:left;
+    width:20%;
+    line-height: 80px;
+    margin-left:10%;
+}
+.btnBox .btn {
+    display:block;
+    border:0;
+    outline:0;
+    background-color:transparent;
+    line-height:80px;
+    font-size:18px;
+    cursor:pointer;
+    color:#fff;
+    text-indent:20px;
+}
+.btnBox .btn:hover {
+    text-decoration:underline;
+}
+.conwrap {
+    width:1400px;
+    height:500px;
+    position:absolute;
+}
+.ft {
+    width:100%;
+    height:150px;
+    background-color:#333;
+    clear:both;
+}
+.ftFrame {
+    width:1400px;
+    margin:0 auto;
+    height:auto;
+    padding:20px;
+}
+.fnb {
+    width:100%;
+    height:50px;
+}
+.fmenu {
+    width:100%;
+    height:50px;
+    border-bottom:1px solid #aaa;
+}
+.fmenu li {
+    float:left;
+    width:200px;
+    margin-right:50px;
+}
+.fmenu li a {
+    display:block;
+    color:#aaa;
+}
+.fmenu li a:hover {
+    color:#fff;
+}
+.footerCopy {
+    padding-top:20px;
+    font-size:0.8em;
+    color:#aaa;
 }
 /* news_bar */
 .collapFrame {
