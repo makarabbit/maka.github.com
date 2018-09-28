@@ -1,0 +1,455 @@
+@charset "utf-8";
+* {
+    margin:0;
+    padding:0;
+}
+body, html {
+    width:100%;
+    height:100%;
+    font-family: 'Noto Sans', sans-serif;
+    min-width:1400px;
+    -ms-overflow-style:none;
+}
+::-webkit-scrollbar { display:none; }
+::-moz-scrollbar { display:none; }
+::-ms-scrollbar { display:none; }
+::-o-scrollbar { display:none; }
+
+ul {
+    list-style:none;
+}
+a {
+    text-decoration:none;
+}
+img {
+    border:0;
+}
+button {
+    cursor:pointer;
+    outline:0;
+    border:0;
+    background-color:transparent;
+}
+#wrap {
+    width:100%;
+    height:100%;
+}
+#hd {
+    width:100%;
+    height:65px;
+    background-color:#fff;
+    border-bottom:1px solid #e0e0e0;
+    position:fixed;
+    z-index:999;
+    top:0;
+    left:0;
+}
+.gnb {
+    width:1400px;
+    height:65px;
+    margin:0 auto;
+}
+.gnb .logo {
+    display:block;
+    background-image:url("./images/logo.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    width:214px;
+    height:50px;
+    padding-top:20px;
+    float:left;
+}
+.gnb .menu {
+    width:800px;
+    float:left;
+    height:65px;
+    margin-left:10%;
+    margin-top:5px;
+}
+.menu li {
+    float:left;
+    width:20%;
+    line-height:65px;
+}
+.menu li a {
+    display:block;
+    text-align:center;
+    color:#333;
+    font-size:18px;
+    transition:0.3s;
+}
+.menu li a:hover {
+    color:#44c0df;
+}
+.menu li a.on {
+    color:#44c0df;
+}
+.sub {
+    position:absolute;
+    z-index:999;
+    top:65px;
+    left:0;
+    width:100%;
+    height:200px;
+    background-color:#fff;
+    border-top:1px solid #e0e0e0;
+    box-sizing:border-box;
+    display:none;
+    border-bottom:1px solid #e0e0e0;
+}
+.subwrap {
+    width:1200px;
+    height:200px;
+    margin:0 auto;
+    max-width:1200px;
+}
+.sub .subLft {
+    width:30%;
+    float:left;
+    height:200px;
+    border-right:1px solid #e0e0e0;
+}
+.sub .subTit {
+    font-weight:400;
+    padding-top:20px;
+    font-size:22px;
+    color:#44c0df;
+}
+.sub .subTxt {
+    font-size:16px;
+    line-height:1.2;
+}
+.subMenu {
+    width:60%;
+    float:left;
+    height:200px;
+}
+.subMenu li {
+    float:left;
+    width:120px;
+    height:50px;
+    margin-top:20px;
+    padding:10px;
+    margin-left:20px;
+}
+.subMenu li a {
+    display:block;
+    font-size:16px;
+    line-height:50px;
+    text-align:center;
+    color:#333;
+}
+.subMenu li a:hover {
+    border-bottom:2px solid #44c0df;
+}
+.user {
+    display:block;
+    width:30px;
+    height:30px;
+    float:left;
+    background-image:url("./images/user_icon.png");
+    background-repeat:no-repeat;
+    margin-top:18px;
+}
+.search {
+    display:block;
+    width:30px;
+    height:30px;
+    float:left;
+    background-image:url("./images/search_icon.png");
+    background-repeat:no-repeat;
+    margin-top:18px;
+    margin-left:40px;
+}
+/* 본문비주얼 */
+#vs {
+    width:100%;
+    height:100%;
+    clear:both;
+    overflow:hidden;
+    position:relative;
+}
+#vs .imgBox {
+    width:300%;
+    height:100%;
+}
+.imgBox li {
+    width:33.3333%;
+    height:100%;
+    float:left;
+}
+.imgBox li.item1 {
+    background-image:url("./images/vImg1.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center center;
+}
+.imgBox li.item2 {
+    background-image:url("./images/vImg2.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center center;
+}
+.imgBox li.item3 {
+    background-image:url("./images/vImg3.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center center;
+}
+.txtBox {
+    position:absolute;
+    width:800px;
+    height:300px;
+    top:calc(calc(100% - 300px) / 2);
+    left:calc(calc(100% - 800px) / 2);
+    z-index:99;
+}
+.txtBox h1 {
+    text-align:center;
+    font-weight:100;
+    font-size:70px;
+    line-height:2;
+}
+.txtBox h3 {
+    text-align:center;
+    font-weight:300;
+    font-size:30px;
+}
+.more {
+    position:absolute;
+    z-index:99;
+    display:block;
+    width:150px;
+    height:50px;
+    border-radius:30px;
+    border:1px solid #333;
+    line-height:50px;
+    text-align:center;
+    font-size:18px;
+    color:#333;
+    left:calc(calc(100% - 150px) / 2);
+    bottom:33%;
+    transition:0.3s;
+}
+.more:hover {
+    background-color:#333;
+    color:#fff;
+}
+
+/* 두번째 페이지 */
+#con2 {
+    width:100%;
+    height:100%;
+    clear:both;
+}
+.conWrap {
+    width:1400px;
+    height:90%;
+    margin:0 auto;
+    padding-top:5%;
+    box-sizing: border-box;
+}
+.conTit {
+    text-align:center;
+    letter-spacing:0.38em;
+}
+.conTit strong {
+    color:#44c0df;
+}
+.btnArea {
+    width:100%;
+    height:90%;
+    background-image:url("./images/con2_bg.png");
+    background-size:cover;
+    margin-top:50px;
+}
+.btnArea ul {
+    width:100%;
+    height:100%;
+}
+.btnArea .box {
+    width:50%;
+    height:50%;
+    float:left;
+    cursor:pointer;
+    box-sizing: border-box;
+    transition:0.5s;
+    padding:20px;
+}
+.bo1, .bo3 {
+    border-right:1px solid #eee;
+}
+.bo1, .bo2 {
+    border-bottom:1px solid #eee;
+}
+.btnArea .box:hover {
+    background-color:#44c0df;
+}
+.box h2, .box p {
+    color:#fff;
+    text-align:center;
+}
+.box h2 {
+    font-weight:300;
+    font-size:30px;
+    line-height:2;
+}
+.box p {
+    font-weight:300;
+    font-size:18px;
+}
+.box .boxIco1 {
+    display:block;
+    width:150px;
+    height:150px;
+    background-image:url("./images/ico1.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    margin:0 auto;
+    margin-top:20px;
+}
+.box .boxIco2 {
+    display:block;
+    width:150px;
+    height:150px;
+    background-image:url("./images/ico2.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    margin:0 auto;
+    margin-top:20px;
+}
+.box .boxIco3 {
+    display:block;
+    width:150px;
+    height:150px;
+    background-image:url("./images/ico3.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    margin:0 auto;
+    margin-top:20px;
+}
+.box .boxIco4 {
+    display:block;
+    width:150px;
+    height:150px;
+    background-image:url("./images/ico4.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    margin:0 auto;
+    margin-top:20px;
+}
+#con3 {
+    width:100%;
+    height:100%;
+    clear:both;
+}
+.L_Box {
+    width:35%;
+    height:100%;
+    float:left;
+    position:relative;
+    padding:50px;
+    box-sizing:border-box;
+}
+.L_Box h1 {
+    float:right;
+    padding-top:30%;
+    font-size:40px;
+    font-weight:100;
+    color:#44c0df;
+}
+.L_Box .pxtBox {
+    width:450px;
+    float:right;
+    margin-top:40px;
+}
+.L_Box p {
+    float:right;
+    padding-top:20px;
+    font-size:18px;
+    font-weight:100;
+    color:#333;
+    text-align:left;
+    line-height:1.5;
+}
+.conMore {
+    position:absolute;
+    bottom:30%;
+    left:calc(calc(100% - 320px) / 2);
+    display:block;
+    width:150px;
+    height:50px;
+    border-radius:30px;
+    border:1px solid #333;
+    line-height:50px;
+    text-align:center;
+    font-size:18px;
+    color:#333;
+    transition:0.3s;
+}
+.conMore:hover {
+    background-color:#333;
+    color:#fff;
+}
+.R_Box {
+    width:65%;
+    height:100%;
+    float:left;
+    position:relative;
+}
+.R_Box li {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:20;
+}
+.R_Box .bg1 {
+    width:100%;
+    height:100%;
+    float:left;
+    background-image:url("./images/con3_bg1.jpg");
+    background-size:cover;
+}
+.R_Box .bg2 {
+    width:100%;
+    height:100%;
+    float:left;
+    background-image:url("./images/con3_bg2.jpg");
+    background-size:cover;
+}
+
+#ft {
+    width:100%;
+    height:200px;
+    border-top:1px solid #e0e0e0;
+}
+.fnb {
+    width:1400px;
+    margin:0 auto;
+    height:50px;
+}
+.fnb li {
+    float:left;
+    width:20%;
+    height:50px;
+}
+.fnb li a {
+    display:block;
+    color:#333;
+    text-align:center;
+    line-height:50px;
+}
+.fnb li a:hover {
+    color:#44c1df;
+}
+.copy {
+    width:100%;
+    border-top:1px solid #e0e0e0;
+    padding:20px;
+    box-sizing: border-box;
+}
+.copy p {
+    text-align:center;
+    font-size:16px;
+    line-height:1.6;
+}
