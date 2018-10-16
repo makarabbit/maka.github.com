@@ -33,7 +33,7 @@ $(document).ready(function(){
     });
     
     /* 클릭 시 배너 넘어감 */
-    function ani() {
+    function next_ani() {
         $(".proBox").not(":animated").animate({"margin-left" : "-300px"}, 500, function(){
            $(".proBox li").eq(0).appendTo($(".proBox"));
            $(".proBox").css("margin-left", "0px");
@@ -45,7 +45,7 @@ $(document).ready(function(){
         $(".proBox").not(":animated").animate({"margin-left" : "0px"}, 500)
     }
     $(".rightBtn").click(function(){
-       ani();
+       next_ani();
     });
     $(".leftBtn").click(function(){
         pre_ani();
