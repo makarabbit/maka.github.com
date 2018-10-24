@@ -5,6 +5,15 @@ $(document).ready(function(){
    $(".menu li, .subMenu").mouseleave(function(){
       $(".subMenu").stop().slideUp(300); 
    });
+    
+    $(".mo_menu .menuIco").click(function(){
+       $(".mo_menu_collap_bg").fadeIn(300);
+       $(".mo_menu_collap").addClass("on");
+    });
+    $(".mo_menu_collap .closeBtn").click(function(){
+       $(".mo_menu_collap_bg").fadeOut(300);
+        $(".mo_menu_collap").removeClass("on");
+    });
     var n = 0;
     var cnt = $(".imgBox li").length;
     $(".imgBox li").eq(0).css("z-index", "30").css("opacity", "1");
@@ -14,7 +23,6 @@ $(document).ready(function(){
         $(".btnBox .btn").removeClass("on");
         $(this).addClass("on");
         ani(idx);
-        t_ani(idx);
     });
     function ani(n){
         $(".imgBox li").eq(n).siblings().css("z-index", "25");
@@ -50,4 +58,18 @@ $(document).ready(function(){
     $(".leftBtn").click(function(){
         pre_ani();
     })
+    
+    
+    /* 서치창 */
+    var sw=1;
+    $(".tnb .searchIco").click(function(){
+        if(sw==1){
+            $(".searchBox").slideDown(500);
+            $(".searchIco").addClass("on");
+        } else {
+            $(".searchBox").slideUp(300);
+            $(".searchIco").removeClass("on");
+        }
+        sw = sw*-1;
+    });
 });

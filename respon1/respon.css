@@ -1,0 +1,252 @@
+@charset "utf-8";
+.mobile_inner {
+    display:none;
+    padding:0 5%;
+}
+.fmenu_m {
+    display:none;
+}
+/* 모바일 페이지 */
+.mo_menu {
+    width:100%;
+    display:none;
+    height:60px;
+    position:relative;
+}
+.mo_menu_wrap {
+    padding:0 3%;
+    height:60px;
+}
+.mo_menu_wrap .searchIco {
+    right:10px;
+    top:20px;
+    line-height:0;
+}
+.mo_menu_wrap .menuIco {
+    display:block;
+    font-size:24px;
+    position:absolute;
+    left:10px;
+    top:20px;
+}
+.mo_menu_collap_bg {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    z-index:9990;
+    display:none;
+}
+.mo_menu_collap {
+    width:85%;
+    height:100%;
+    background-color:#fff;
+    position:absolute;
+    top:0;
+    right:-90%;
+    z-index:9999;
+    opacity:0;
+    transition:0.5s;
+}
+.mo_menu_collap.on {
+    right:0;
+    opacity:1;
+}
+.mo_gnb {
+    width:100%;
+    height:100%;
+    clear:both;
+}
+.mo_gnb li {
+    clear:both;
+    line-height:50px;
+    border-bottom:1px solid #efefef;
+}
+.mo_gnb li:first-child {
+    border-top:1px solid #efefef;
+}
+.mo_gnb li a {
+    display:block;
+    text-indent:20px;
+    color:#333;
+    font-size:1em;
+}
+.closeBtn {
+    font-size:24px;
+    position:absolute;
+    top:16px;
+    right:20px;
+    z-index:99999;
+    color:#ffc000;
+}
+@media screen and (max-width:767px){
+    /* 모바일 */
+    /* 헤더부분 */
+    .wrap {
+        overflow-x:hidden;
+    }
+    #hd {
+        height:60px;
+    }
+    .desk_inner, .gnb, .searchBox {
+        display:none;
+    }
+    .mo_menu {
+        display:block;
+    }
+    .userLst {
+        height:60px;
+        float:left;
+        margin-left:20px;
+    }
+    .userLst li {
+        line-height:60px;
+    }
+    .userLst li a {
+        line-height:60px;
+    }
+    /* 비주얼 영역 */
+    .mobile_inner {
+        display:block;
+    }
+    .vsTxtBox {
+        top:calc(calc(100% - 400px) / 2); 
+    }
+    .vsTxtBox2 {
+        left:calc(calc(100% - 300px) / 2);
+        top:33%;
+    }
+    .imgBox .vsBtnBox .more, .imgBox .vsBtnBox .more2 {
+        bottom:32%;
+    }
+    
+    /* 컨텐츠2 */
+    .tabBox {
+        width:100%;
+        height:50px;
+    }
+    .tabLst {
+        margin-left:5%;
+    }
+    .tabLst li {
+        margin-right:10px;
+        margin-bottom:20px;
+    }
+    .bannerBox {
+        position:relative;
+    }
+    .bannerLst {
+        width:300px;
+        overflow-x:hidden;
+    }
+    .proBox li {
+        margin-left:40px;
+    }
+    .leftBtn {
+        left:0
+    }
+    .rightBtn {
+        left:320px;
+    }
+    
+    /* 컨텐츠3 */
+    .snsBox {
+        margin-left:3%;
+    }
+    .snsBox li {
+        clear:both;
+    }
+    
+    /*컨텐츠4 */
+    #con3 {
+        display:none;
+    }
+    
+    /* 컨텐츠 마지막 */
+    #con4 {
+        clear:both;
+        width:100%;
+    }
+    .thBox {
+        height:auto;
+        clear:both;
+    }
+    .thBox li {
+        clear:both;
+        margin:20px;
+    }
+    .thBox li:last-child {
+        float:none;
+        clear:both;
+    }
+    #ft {
+        clear:both;
+        margin-top:900px;
+    }
+    .fnb {
+        width:90%;
+        margin:0 auto;
+        height:40px;
+    }
+    .fmenu {
+        height:40px;
+    }
+    .fmenu li {
+        width:33.3%;
+        line-height:20px;
+    }
+    .fmenu li a {
+        font-size:0.7em;
+    }
+
+}
+@media screen and (min-width:768px) and (max-width:959px){
+    /* 태블릿 PC */
+    /* 헤더영역*/
+    .wrap {
+        overflow-x:hidden;
+    }
+    #hd {
+        height:60px;
+    }
+    .desk_inner, .gnb, .searchBox {
+        display:none;
+    }
+    .mo_menu {
+        display:block;
+    }
+    .userLst {
+        height:60px;
+        float:left;
+        margin-left:20px;
+    }
+    .userLst li {
+        line-height:60px;
+    }
+    .userLst li a {
+        line-height:60px;
+    }
+    /* 비주얼 영역 */
+    .mobile_inner {
+        display:block;
+    }
+    .vsTxtBox {
+        top:calc(calc(100% - 400px) / 2); 
+    }
+    .vsTxtBox2 {
+        left:calc(calc(100% - 300px) / 2);
+        top:33%;
+    }
+    .imgBox .vsBtnBox .more, .imgBox .vsBtnBox .more2 {
+        bottom:33%;
+    }
+    /* 컨텐츠2 */
+}
+@media screen and (min-width:960px) and (max-width:1279px){
+    /* 데스크탑 */
+}
+@media screen and (min-width:1280px){
+    /* 고해상도 데스크탑 */
+}

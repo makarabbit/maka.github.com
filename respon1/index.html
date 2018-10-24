@@ -23,11 +23,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- 스타일시트 -->
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./respon.css">
 </head>
 <body>
     <div class="wrap">
         <header id="hd">
-           <div class="desk_inner">
+            <div class="desk_inner">
                 <nav class="tnb">
                     <ul class="snsLst">
                         <li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -370,6 +371,45 @@
                     </li>
                 </ul>
             </nav>
+            <div class="searchBox">
+                <div class="boxInner">
+                   <label class="inputTit">이케아제품을 검색해주세요</label>
+                    <input type="text" class="inputTxt">
+                    <button type="submit" class="submitBtn">검색</button>
+                </div>
+            </div>
+            <nav class="mo_menu">
+               <div class="mo_menu_wrap">
+                    <button class="searchIco">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <a href="index.html" class="logo"></a>
+                    <button class="menuIco">
+                        <i class="fas fa-bars"></i>
+                    </button>
+               </div>
+            </nav>
+            <div class="mo_menu_collap_bg"></div>
+            <div class="mo_menu_collap">
+                   <ul class="userLst">
+                        <li><a href="#" class="login">로그인</a></li>
+                        <li><a href="#" class="join">회원가입</a></li>
+                   </ul>
+                   <button class="closeBtn">
+                       <i class="fas fa-times"></i>
+                   </button>
+                   <ul class="mo_gnb">
+                       <li><a href="#">거실</a></li>
+                       <li><a href="#">침실</a></li>
+                       <li><a href="#">다이닝</a></li>
+                       <li><a href="#">주방</a></li>
+                       <li><a href="#">욕실</a></li>
+                       <li><a href="#">홈오피스</a></li>
+                       <li><a href="#">어린이IKEA</a></li>
+                       <li><a href="#">현관</a></li>
+                       <li><a href="#">야외용</a></li>
+                   </ul>
+               </div>
         </header>
         <figure id="vs">
             <ul class="imgBox">
@@ -377,6 +417,14 @@
                     <div class="desk_inner">
                             <div class="vsTxtBox vsTB">
                                 <img src="images/vsTxt01.png" alt="텍스트">
+                            </div>
+                            <div class="vsBtnBox">
+                                <a href="#" class="more">SHOP NOW</a>
+                            </div>
+                    </div>
+                    <div class="mobile_inner">
+                            <div class="vsTxtBox vsTB">
+                                <img src="images/vsTxt01_m.png" alt="텍스트">
                             </div>
                             <div class="vsBtnBox">
                                 <a href="#" class="more">SHOP NOW</a>
@@ -392,6 +440,14 @@
                                 <a href="#" class="more2">DISCOVER</a>
                             </div>
                     </div>
+                    <div class="mobile_inner">
+                            <div class="vsTxtBox2 vsTB">
+                                <img src="images/vsTxt02_m.png" alt="텍스트">
+                            </div>
+                            <div class="vsBtnBox">
+                                <a href="#" class="more2">DISCOVER</a>
+                            </div>
+                    </div>
                 </li>
             </ul>
             <div class="btnBox">
@@ -402,6 +458,126 @@
         <section id="con1">
             <h2 class="conTit">IKEA'S CHOICE</h2>
             <div class="desk_inner">
+                <div class="tabBox">
+                    <ul class="tabLst">
+                        <li><button class="tbBtn tabBtn1 on">이케아 추천 제품</button></li>
+                        <li><button class="tbBtn tabBtn2">이달의 인기 제품</button></li>
+                        <li><button class="tbBtn tabBtn3">가장 많이 검색된 제품</button></li>
+                        <li><button class="tbBtn tabBtn4">새로 나온 제품</button></li>
+                    </ul>
+                </div>
+                <div class="bannerBox">
+                    <div id="banner01" class="bannerLst">
+                        <ul class="proBox">
+                            <li>
+                            <a href="#">
+                                <img src="./images/bannerImg01.png" alt="배너이미지">
+                                <div class="hoverBox">
+                                    <h2>HÖVÅG 회보그</h2>
+                                </div>
+                            </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./images/bannerImg02.png" alt="배너이미지">
+                                    <div class="hoverBox">
+                                        <h2>TARVA 타르바</h2>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./images/bannerImg03.png" alt="배너이미지">
+                                    <div class="hoverBox">
+                                        <h2>KARLSTAD 칼스타드</h2>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./images/bannerImg04.png" alt="배너이미지">
+                                    <div class="hoverBox">
+                                        <h2>SKARSTA 스카르스타</h2>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./images/bannerImg05.png" alt="배너이미지">
+                                    <div class="hoverBox">
+                                        <h2>MALM 말름</h2>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./images/bannerImg06.png" alt="배너이미지">
+                                    <div class="hoverBox">
+                                        <h2>RÅSKOG 로스코그</h2>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./images/bannerImg07.png" alt="배너이미지">
+                                    <div class="hoverBox">
+                                        <h2>DUKTIG 둑티그</h2>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./images/bannerImg08.png" alt="배너이미지">
+                                    <div class="hoverBox">
+                                        <h2>HELMER 헬메르</h2>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="banner02" class="bannerLst">
+                        <ul class="proBox">
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div id="banner03" class="bannerLst">
+                        <ul class="proBox">
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div id="banner04" class="bannerLst">
+                        <ul class="proBox">
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div class="arrowBtnBox">
+                        <button class="leftBtn"></button>
+                        <button class="rightBtn"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile_inner">
                 <div class="tabBox">
                     <ul class="tabLst">
                         <li><button class="tbBtn tabBtn1 on">이케아 추천 제품</button></li>
@@ -634,19 +810,22 @@
             </ul>
         </section>
         <footer id="ft">
-           <div class="ftWrap">
             <nav class="fnb">
                 <ul class="fmenu">
-                    <li><a href="#">찾아오시는길</a></li>
-                    <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">개인정보보호법</a></li>
-                    <li><a href="#">교육자료</a></li>
+                    <li><a href="#">고객지원</a></li>
+                    <li><a href="#">IKEA서비스</a></li>
+                    <li><a href="#">IKEA이야기</a></li>
+                    <li><a href="#">IKEA채용</a></li>
+                    <li><a href="#">웹사이트이용약관</a></li>
+                    <li><a href="#"><span class="yellow">개인정보처리방침</span></a></li>
                 </ul>
             </nav>
             <p class="copy">
+                주소:(우)14352 경기도 광명시 일직로 17 IKEA 광명점<br>
+                사업자 등록번호 : 106-86-82871     대표자 : 안드레 슈미트갈<br>
+                통신판매업 신고 : 2018-경기광명-0209     TEL : 1670-4532<br><br>
                 © Inter IKEA Systems B.V. 1999 - 2018
             </p>
-            </div>
         </footer>
     </div>
 </body>
