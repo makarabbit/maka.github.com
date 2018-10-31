@@ -19,5 +19,37 @@ $(document).ready(function(){
            scrollTop:scrollPosition 
         }, 500);
     });
+    $(".colLst a").click(function(){
+       var scrollPosition = $($(this).attr("href")).offset().top;
+        $("html,body").not(":animated").animate({
+           scrollTop:scrollPosition 
+        }, 500);
+    });
     
+    $(".menu").click(function(){
+        $(".collap").addClass("on");
+    });
+    $(".close").click(function(){
+        $(".collap").removeClass("on");
+    });
+    
+    $(".txtBox a").mouseover(function(){
+       $(".onLine").removeClass("on");
+       $(this).find(".onLine").addClass("on"); 
+    });
+    $(".txtBox a").mouseleave(function(){
+       $(".onLine").removeClass("on"); 
+    });
+});
+
+
+$(document).ready(function(){ 
+  $(window).scroll(function(){ 
+      var hei = $(document).scrollTop(); 
+      if(hei > 400){ 
+          var container = $(".name");
+            // Shuffle the contents of container
+          container.stop().shuffleLetters();
+      } 
+  }); 
 });

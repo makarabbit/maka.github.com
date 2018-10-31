@@ -51,7 +51,7 @@ img {
     border-bottom:1px solid #efefef;
 }
 .hdWrap {
-    width:1600px;
+    width:90%;
     margin:0 auto;
 }
 .logo {
@@ -66,7 +66,7 @@ img {
 }
 .menu {
     cursor:pointer;
-    background-color:red;
+    background-color:firebrick;
     width:50px;
     height:50px;
     float:right;
@@ -74,21 +74,79 @@ img {
 }
 .line {
     display:block;
-    width:30px;
+    width:32px;
     height:2px;
     background-color:#fff;
-    margin:10px;
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-right:8px;
+    float:right;
     transition:0.3s;
 }
 .line:nth-child(2) {
     width:20px;
-    background-position: right;
+    
 }
 .menu:hover .line:nth-child(2) {
-    width:30px;
+    width:32px;
 }
 .collap {
-    display:none;
+    width:30%;
+    height:100%;
+    background-color:#333;
+    position:fixed;
+    top:0;
+    right:-100%;
+    z-index:9999;
+    transition:0.5s;
+}
+.collap.on {
+    right:0;
+}
+.close {
+    display:block;
+    width:30px;
+    height:30px;
+    top:20px;
+    right:18%;
+    position:absolute;
+    background-image:url("./images/close.png");
+    cursor:pointer;
+    transition:0.3s;
+}
+.close:hover {
+    transform:rotate(180deg);
+}
+.colLst {
+    position:absolute;
+    top:20%;
+    left:20%;
+}
+.colLst li {
+    line-height:100px;
+    clear:both;
+}
+.colLst li a {
+    display:block;
+    color:#fff;
+    font-size:50px;
+    font-weight:300;
+    transition:0.5s;
+}
+.colLst li a:hover {
+    color:crimson;
+}
+
+.copy {
+    position:absolute;
+    left:20%;
+    bottom:20%;
+    z-index:999;
+}
+.copy p {
+    color:#fff;
+    font-size:16px;
+    font-weight:100;
 }
 #con1 {
     width:100%;
@@ -123,7 +181,7 @@ img {
     left:0;
     transition:0.5s;
 }
-.txtBox a:hover .onLine {
+.onLine.on {
     width:100%;
 }
 #con2 {
@@ -133,24 +191,296 @@ img {
     background-color:firebrick;
 }
 .conTit {
-    font-size:1.5vw;
+    font-size:2em;
     color:#333;
-    padding-top:10%;
+    padding-top:5%;
     text-align:center;
 }
+
 #con2 .conTit {
     color:#fff;
 }
+.conBox {
+    width:1600px;
+    height:100%;
+    margin:0 auto;
+    padding-top:20px;
+}
+.box1 {
+    width:600px;
+    float:left;
+}
+.name {
+    color:#fff;
+    font-size:60px;
+    font-weight:100;
+}
+.skill {
+    clear:both;
+    width:400px;
+    margin-top:50px;
+}
+.skillBox li {
+    width:100%;
+    height:60px;
+}
+.skillBox li div {
+    float:left;
+}
+.left img{
+    margin-top:10px;
+}
+.right {
+    margin-left:20px;
+}
+.right p {
+    color:#fff;
+    font-size:18px;
+}
+
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 300px;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  color: #273238;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #333;
+  border-radius: 8px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.box2 {
+    width:1000px;
+    float:right;
+    height:70%;
+}
+.info1 {
+    width:400px;
+    height:400px;
+    position:relative;
+    float:left;
+}
+.infoTit {
+    color:#fff;
+    font-size:1.5em;
+    line-height:2;
+    font-weight:100;
+    letter-spacing:10px;
+}
+.infoLine {
+    display:block;
+    top:10%;
+    left:0;
+    width:100%;
+    height:1px;
+    background-color:#fff;
+    margin:10px 0;
+}
+.info2 {
+    width:400px;
+    height:400px;
+    position:relative;
+    float:left;
+    margin-left:40px;
+}
+.info3 {
+    width:400px;
+    height:400px;
+    float:left;
+}
+.info4 {
+    width:400px;
+    height:400px;
+    float:left;
+    margin-left:40px;
+}
+
+/* 워크 페이지 */
 #con3 {
     width:100%;
     height:100%;
     clear:both;
+    overflow:hidden;
 }
+
+/* 탭조절 */
+.rdoBtn {
+    display:none;
+}
+#rdo1:checked ~ .workBox #pannel-1 {
+    z-index:30;
+    opacity:1;
+}
+#rdo2:checked ~ .workBox #pannel-2 {
+    z-index:30;
+    opacity:1;
+}
+#rdo3:checked ~ .workBox #pannel-3 {
+    z-index:30;
+    opacity:1;
+}
+#rdo4:checked ~ .workBox #pannel-4 {
+    z-index:30;
+    opacity:1;
+}
+
+.workBox {
+    width:50%;
+    height:80%;
+    margin:0 auto;
+    margin-top:50px;
+    position:relative;
+}
+.workLst {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    z-index:20;
+    transition:0.5s;
+}
+.workLst li {
+    width:100%;
+    line-height:100px;
+    margin:10px;
+    clear:both;
+}
+.workLst li a {
+    display:block;
+    font-size:4em;
+    font-weight:100;
+    color:firebrick;
+    letter-spacing:20px;
+    line-height:100px;
+    transition:0.3s;
+    position:relative;
+}
+.workLine {
+    display:block;
+    position:absolute;
+    top:calc(calc(100% - 2px) / 2);
+    left:0;
+    height:2px;
+    background-color:#333;
+    width:0;
+    float:left;
+    transition:0.3s;
+}
+.workLst li a:hover {
+    color:#bbb;
+}
+.workLst li a:hover > span {
+    width:85%;
+}
+.wrokLst {
+    display:none;
+}
+/* 갤러리 페이지 */
 #con4 {
     width:100%;
     height:100%;
     clear:both;
+    overflow:hidden;
 }
+.tabBox {
+    width:50%;
+    height:50px;
+    margin:20px auto;
+}
+.tabBox li {
+    line-height:50px;
+    width:23%;
+    float:left;
+    margin-right:1%;
+}
+.tabBtn {
+    display:block;
+    width:100%;
+    line-height:50px;
+    cursor:pointer;
+    text-align:center;
+    transition:0.3s;
+    position:relative;
+}
+.tabLine {
+    position:absolute;
+    bottom:0;
+    left:calc(calc(100% - 100px) / 2);
+    width:100px;
+    height:2px;
+    background-color:firebrick;
+    display:none;
+    transition:0.3s;
+}
+.tabBtn.on > .tabLine{
+    display:block;
+}
+.tabBtn:hover {
+    color:#aaa;
+}
+
+#rdo21:checked ~ .galLst #pannel-21 {
+    z-index:30;
+    opacity:1;
+}
+#rdo22:checked ~ .galLst #pannel-22 {
+    z-index:30;
+    opacity:1;
+}
+#rdo23:checked ~ .galLst #pannel-23 {
+    z-index:30;
+    opacity:1;
+}
+#rdo24:checked ~ .galLst #pannel-24 {
+    z-index:30;
+    opacity:1;
+}
+.galLst {
+    width:90%;
+    margin:0 auto;
+    position:relative;
+}
+.galBox {
+    width:100%;
+    height:100%;
+    background-color:#fafafa;
+    margin:0 auto;
+    padding-top:80px;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    z-index:25;
+    transition:0.3s;
+}
+.galBox li {
+    width:30%;
+    margin:1%;
+    height:300px;
+    float:left;
+    transition:0.5s;
+    cursor:pointer;
+}
+.galBox li img {
+    width:100%;
+    height:auto;
+}
+.galHover {
+    display:none;
+}
+/*
 .galBox {
     width:1400px;
     height:500px;
@@ -180,4 +510,59 @@ img {
     text-align:center;
     font-size:1vw;
     color:#333;
+}
+*/
+#con5 {
+    width:100%;
+    height:100%;
+    clear:both;
+    background-color:firebrick;
+}
+#con5 .conTit {
+    color:#fff;
+}
+.frmBox {
+    width:800px;
+    margin:20px auto;
+    margin-top:80px;
+}
+.frmBox p {
+    text-align:center;
+    color:#fff;
+}
+.frmCon {
+    margin-top:80px;
+}
+.frmCon .inp {
+    display:block;
+    clear:both;
+    width:500px;
+    height:50px;
+    margin:0 auto;
+    margin-top:30px;
+    border:1px solid #fff;
+    background-color:transparent;
+    outline:0;
+    color:#fff;
+    text-indent:10px;
+    font-size:18px;
+    font-weight:100;
+    border-radius:20px;
+}
+.subBtn {
+    display:block;
+    cursor:pointer;
+    width:500px;
+    height:50px;
+    background-color:#fff;
+    color:#333;
+    font-size:20px;
+    margin:0 auto;
+    margin-top:30px;
+    border-radius:20px;
+    transition:0.5s;
+}
+.subBtn:hover {
+    background-color:#333;
+    color:#fff;
 }

@@ -17,6 +17,8 @@
 	<link rel="stylesheet" href="./style.css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="./main.js"></script>
+    <script src="./script.js"></script>
+    <script src="./jquery.shuffleLetters.js"></script>
 </head>
 <body>
 	<div class="wrap">
@@ -29,28 +31,35 @@
                     <span class="line"></span>
                 </button>
 	        </div>
-	        <div class="collap">
+	    </header>
+	    <div class="collap">
 	            <button class="close"></button>
 	            <ul class="colLst">
-                    <a href="#con2">
-                        ABOUT ME
-                        <span class="onLine"></span>
-                    </a>
-                    <a href="#con3">
-                        WORK
-                        <span class="onLine"></span>
-                    </a>
-                    <a href="#con4">
-                        PORTFOLIO
-                        <span class="onLine"></span>
-                    </a>
-                    <a href="#con5">
-                        CONTACT ME
-                        <span class="onLine"></span>
-                    </a>
+                    <li>
+                        <a href="#con2">
+                            ABOUT ME
+	                    </a>
+                    </li>
+                    <li>
+                        <a href="#con3">
+                            WORK
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#con4">
+                            PORTFOLIO
+	                    </a>
+                    </li>
+                    <li>
+                        <a href="#con5">
+                            CONTACT ME
+	                    </a>
+                    </li>
 	            </ul>
+	            <div class="copy">
+	                <p>© 2018 Sweep Park All Rights Reserved</p>
+	            </div>
 	        </div>
-	    </header>
 	    <section id="con1">
             <img src="./images/bg.png" alt="배경이미지">
 	        <div class="txtBox">
@@ -74,26 +83,290 @@
 	    </section>
 	    <section id="con2">
 	        <h2 class="conTit">ABOUT ME</h2>
+	        <div class="conBox">
+                <div class="box1">
+                    <h1 class="name">HELLO</h1>
+                    <h1 class="name">I'm PARK SEULJI</h1>
+                    <div class="skill">
+	                    <h3 class="infoTit">ABILITY</h3>
+	                    <span class="infoLine"></span>
+	                    <ul class="skillBox">
+	                        <li>
+	                            <div class="left">
+	                                <img src="./images/ico1.png" alt="아이콘1">
+	                            </div>
+	                            <div class="right bar-container">
+                                    <p>ADOBE PHOTOSHOP</p>
+                                    <progress class="progressTag" value="95" max="100"/>
+	                            </div>
+	                        </li>
+	                        <li>
+	                            <div class="left">
+	                                <img src="./images/ico2.png" alt="아이콘1">
+	                            </div>
+	                            <div class="right bar-container">
+                                    <p>ADOBE ILLUSTRATOR</p>
+                                    <progress class="progressTag" value="95" max="100"/>
+	                            </div>
+	                        </li>
+	                        <li>
+	                            <div class="left">
+	                                <img src="./images/ico3.png" alt="아이콘1">
+	                            </div>
+	                            <div class="right bar-container">
+                                    <p>ADOBE INDESIGN</p>
+                                    <progress class="progressTag" value="70" max="100"/>
+	                            </div>
+	                        </li>
+	                        <li>
+	                            <div class="left">
+	                                <img src="./images/ico4.png" alt="아이콘1">
+	                            </div>
+	                            <div class="right bar-container">
+                                    <p>ADOBE AFTEREFFECT</p>
+                                    <progress class="progressTag" value="60" max="100"/>
+	                            </div>
+	                        </li>
+	                        <li>
+	                            <div class="left">
+	                                <img src="./images/ico5.png" alt="아이콘1">
+	                            </div>
+	                            <div class="right bar-container">
+                                    <p>ADOBE XD</p>
+                                    <progress class="progressTag" value="85" max="100"/>
+	                            </div>
+	                        </li>
+	                        <li>
+	                            <div class="left">
+	                                <img src="./images/ico6.png" alt="아이콘1">
+	                            </div>
+	                            <div class="right bar-container">
+                                    <p>SKETCH APP</p>
+                                    <progress class="progressTag" value="80" max="100"/>
+	                            </div>
+	                        </li>
+	                        <li>
+	                            <div class="left">
+	                                <img src="./images/ico7.png" alt="아이콘1">
+	                            </div>
+	                            <div class="right bar-container">
+                                    <p>HTML5 / CSS</p>
+                                    <progress class="progressTag" value="90" max="100"/>
+	                            </div>
+	                        </li>
+	                    </ul>
+	                </div>
+                </div>
+	            <div class="box2">
+	                <div class="info1">
+	                    <h3 class="infoTit">EDUCATION</h3>
+	                    <span class="infoLine"></span>
+	                    <img src="./images/info1.png" alt="학력사항">
+	                </div>
+	                <div class="info2">
+	                    <h3 class="infoTit">EXPRIENCE</h3>
+	                    <span class="infoLine"></span>
+	                    <img src="./images/info2.png" alt="학력사항">
+	                </div>
+                    <div class="info3">
+	                    <h3 class="infoTit">CERTIFICATION</h3>
+	                    <span class="infoLine"></span>
+	                    <img src="./images/info3.png" alt="학력사항">
+	                </div>
+	                <div class="info4">
+	                    <h3 class="infoTit">HOBBY</h3>
+	                    <span class="infoLine"></span>
+	                    <img src="./images/info4.png" alt="학력사항">
+	                </div>
+	            </div>
+	        </div>
 	    </section>
 	    <section id="con3">
 	        <h2 class="conTit">WORK</h2>
+	        <input type="radio" class="rdoBtn" name="rdo" id="rdo1" checked>
+	        <input type="radio" class="rdoBtn" name="rdo" id="rdo2">
+	        <input type="radio" class="rdoBtn" name="rdo" id="rdo3">
+	        <input type="radio" class="rdoBtn" name="rdo" id="rdo4">
+	        <ul class="tabBox">
+                <li>
+                    <label class="tab1 tabBtn" for="rdo1">
+                        WEB
+                        <span class="tabLine"></span>
+                    </label>
+                </li>
+                <li>
+                    <label class="tab2 tabBtn" for="rdo2">
+                        MOBILE
+                        <span class="tabLine"></span>
+                    </label>
+                </li>
+                <li>
+                    <label class="tab3 tabBtn" for="rdo3">
+                        RESPONSIVE
+                        <span class="tabLine"></span>
+                    </label>
+                </li>
+                <li>
+                    <label class="tab4 tabBtn" for="rdo4">
+                        ECT
+                        <span class="tabLine"></span>
+                    </label>
+                </li>
+            </ul>
+            <div class="workBox"> 
+                <ul class="workLst wlt1" id="pannel-1">
+                    <li>
+                        <a href="#">
+                            BUONOCOFFEE
+                            <span class="workLine"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        MUJU MEORUWINE
+                        <span class="workLine"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            MISOJIUM LUNDRY
+                            <span class="workLine"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            PFIZER KOREA
+                            <span class="workLine"></span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="workLst wlt3" id="pannel-3">
+                    <li>
+                        <a href="#">
+                            IKEA RESPONSIVE
+                            <span class="workLine"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        ETRI RESPONSIVE
+                        <span class="workLine"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            HILLTON HOTEL
+                            <span class="workLine"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 	    </section>
 	    <section id="con4">
             <h2 class="conTit">PORTFOLIO</h2>
-	        <ul class="galBox">
+            <input type="radio" class="rdoBtn" name="rdo" id="rdo21">
+	        <input type="radio" class="rdoBtn" name="rdo" id="rdo22">
+	        <input type="radio" class="rdoBtn" name="rdo" id="rdo23" checked>
+	        <input type="radio" class="rdoBtn" name="rdo" id="rdo24">
+	        <ul class="tabBox">
+                <li>
+                    <label class="tab1 tabBtn" for="rdo21">
+                        WEB
+                        <span class="tabLine"></span>
+                    </label>
+                </li>
+                <li>
+                    <label class="tab2 tabBtn" for="rdo22">
+                        MOBILE
+                        <span class="tabLine"></span>
+                    </label>
+                </li>
+                <li>
+                    <label class="tab3 tabBtn" for="rdo23">
+                        RESPONSIVE
+                        <span class="tabLine"></span>
+                    </label>
+                </li>
+                <li>
+                    <label class="tab4 tabBtn" for="rdo24">
+                        ECT
+                        <span class="tabLine"></span>
+                    </label>
+                </li>
+            </ul>
+            <div class="galLst">
+	        <ul class="galBox gal1" id="pannel-21">
 	            <li>
-                    <a href="http://sjportfolio.dothome.co.kr/respon1" target="_blank">
-                    <img src="./images/pofo1.png" alt="포폴목업1">
-                    <p>IKEA 반응형 사이트</p>
-                    </a>
+	                   <img src="" alt="">
+	                   <div class="galHover">
+	                       BUONO COFFEE
+	                   </div>
 	            </li>
 	            <li>
-	                <a href="http://sjportfolio.dothome.co.kr/respon2" target="_blank">
-	                <img src="./images/pofo2.png" alt="포폴목업1">
-	                <P>ETRI 반응형 사이트</P>
+	                <a href="gal2.html">
+	                   <img src="" alt="">
+	                   <div class="galHover">
+	                       무주머루와인
+	                   </div>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="gal3.html">
+	                   <img src="" alt="">
+	                   <div class="galHover">
+	                       미소지움세탁소
+	                   </div>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="gal4.html">
+	                   <img src="" alt="">
+	                   <div class="galHover">
+	                       한국화이자제약
+	                   </div>
 	                </a>
 	            </li>
 	        </ul>
+	        <ul class="galBox gal1" id="pannel-23">
+	            <li>
+                   <a href="http://sjportfolio.dothome.co.kr/respon1"></a>
+	                   <img src="./images/pofo1.png" alt="">
+	                   <div class="galHover">
+	                       IKEA 반응형사이트
+	                   </div>
+	            </li>
+	            <li>
+                   <a href="http://sjportfolio.dothome.co.kr/respon2">
+	                   <img src="./images/pofo2.png" alt="">
+	                   <div class="galHover">
+	                       ETRI 반응형사이트
+	                   </div>
+	               </a>
+	            </li>
+	            <li>
+                   <a href="http://sjportfolio.dothome.co.kr/respon3">
+	                   <img src="./images/pofo3.png" alt="">
+	                   <div class="galHover">
+	                       힐튼호텔 반응형사이트
+	                   </div>
+	               </a>
+	            </li>
+	        </ul>
+	        </div>
+	    </section>
+	    <section id="con5">
+	        <h2 class="conTit">CONTACT ME</h2>
+	        <div class="frmBox">
+                <p>75, Jangan-ro, Gyeryongsi, Chungnam, Republic Korea</p>
+	            <p>T.+82 10-3975-3232   E-MAIL. psj1893@gmail.com</p>
+	            <form class="frmCon">
+	                <input type="text" value="Name" class="inp">
+	                <input type="text" value="E-mail" class="inp">
+	                <input type="text" value="Subject" class="inp">
+	                <input type="text" value="Content" class="inp">
+	                <button type="submit" class="subBtn">Submit</button>
+	            </form>
+	        </div>
 	    </section>
 	</div>
 </body>
