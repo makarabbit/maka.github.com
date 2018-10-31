@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Hillton Hotel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 폰트연결 -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500|Roboto" rel="stylesheet">
+    <!-- 메인 스타일 연결 -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- 스크립트 연결 -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="./main.js"></script>
+    <script src="./gambit-smoothscroll-min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header id="hd">
+            <nav class="tnb">
+                <ul class="topLeft">
+                    <li><a href="#">호텔찾기</a></li>
+                    <li><a href="#">예약조회</a></li>
+                </ul>
+                <ul class="topRight">
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">멤버쉽</a></li>
+                </ul>
+                <a href="index.html" class="logo"></a>
+            </nav>
+            <nav class="gnb">
+                <ul class="menu">
+                    <li>
+                        <a href="#">호텔찾기</a>
+                        <div class="subMenu">
+                           <div class="subInner">
+                                <div class="subLeft">
+                                    <ul class="subLst">
+                                        <li><a href="#">글로벌 힐튼 호텔</a></li>
+                                        <li><a href="#">국내 힐튼 호텔</a></li>
+                                        <li><a href="#">힐튼 호텔 리뷰</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">프로모션</a>
+                        <div class="subMenu">
+                           <div class="subInner">
+                                <div class="subLeft">
+                                    <ul class="subLst">
+                                        <li><a href="#">호텔패키지</a></li>
+                                        <li><a href="#">룸 프로모션</a></li>
+                                        <li><a href="#">호텔 이벤트</a></li>
+                                        <li><a href="#">스페셜 딜</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">웨딩&amp;미팅</a>
+                        <div class="subMenu">
+                           <div class="subInner">
+                                <div class="subLeft">
+                                    <ul class="subLst">
+                                        <li><a href="#">웨딩프로모션</a></li>
+                                        <li><a href="#">웨딩컨설팅</a></li>
+                                        <li><a href="#">미팅홀</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">호텔소개</a>
+                        <div class="subMenu">
+                           <div class="subInner">
+                                <div class="subLeft">
+                                    <ul class="subLst">
+                                        <li><a href="#">호텔소개</a></li>
+                                        <li><a href="#">호텔스토리</a></li>
+                                        <li><a href="#">추천여행지</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="resBtn">예약하기</a>
+            </nav>
+        </header>
+        <figure id="vs">
+            <ul class="imgBox">
+                <li class="item1"></li>
+                <li class="item2"></li>
+                <li class="item3"></li>
+                <li class="item4"></li>
+            </ul>
+            <div class="btnBox">
+                <button class="leftBtn"></button>
+                <button class="rightBtn"></button>
+            </div>
+            <div class="txtBox">
+                <img src="./images/vTxt.png" alt="텍스트이미지">
+            </div>
+            <div class="bookBox">
+                <ul class="bookLst">
+                    <li>
+                        <input type="text" value="지역선택">
+                        <span class="underLine"></span>
+                    </li>
+                    <li>
+                        <input type="text" value="체크인">
+                        <span class="underLine"></span>
+                    </li>
+                    <li>
+                        <input type="text" value="체크아웃">
+                        <span class="underLine"></span>
+                    </li>
+                    <li>
+                        <input type="text" value="인원수">
+                        <span class="underLine"></span>
+                    </li>
+                </ul>
+            </div>
+        </figure>
+        <section id="con2">
+            <h2 class="conTit">PROMOTION</h2>
+            <p class="conTxt">힐튼 콘랜드에서 제공하는 색다른 프로모션을 경험해보세요</p>
+            <div class="proBox">
+                <ul class="proLst">
+                    <li>
+                        <img src="./images/proImg1.jpg" alt="패키지이미지1">
+                        <div class="proTxtBox">
+                            <h3 class="promoTit">Advance Purchase</h1>
+                            <p class="promoCon">최저가에서 최대 15%할인</p>
+                            <hr>
+                            <p class="promoTxt">다가오는 콘랜드 서울 투숙을 미리 계획하고 최고의 혜택으로 예약하세요.</p>
+                            <a href="#" class="proBtn">자세히보기</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./images/proImg2.jpg" alt="패키지이미지1">
+                        <div class="proTxtBox">
+                            <h3 class="promoTit">AFTERNOON TEA SET</h1>
+                            <p class="promoCon">여유로운 오후의 휴식</p>
+                            <hr>
+                            <p class="promoTxt">여유로운 도심 속 힐링이 필요하신가요? <br>한층 더 업그레이드 된 37그릴 프리미엄 애프터 눈 티 세트를 만나보세요</p>
+                            <a href="#" class="proBtn">자세히보기</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./images/proImg3.jpg" alt="패키지이미지1">
+                        <div class="proTxtBox">
+                            <h3 class="promoTit">ALL DAY ZEST DAY</h1>
+                            <p class="promoCon">모두를 위한 제스트</p>
+                            <hr>
+                            <p class="promoTxt">매주 월요일, 점심과 저녁이 동일한 가격에 제공되는 신개념 뷔페를 선보입니다.</p>
+                            <a href="#" class="proBtn">자세히보기</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="con3">
+            
+        </section>
+        <footer id="ft"></footer>
+    </div>
+</body>
+</html>
