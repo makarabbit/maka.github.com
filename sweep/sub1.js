@@ -1,17 +1,4 @@
-$(document).ready(function(){
-   var ht = parseInt($(window).height());
-    $(window).on("mousewheel", function (e) {
-        if (e.originalEvent.wheelDelta < 0) {
-            $("html,body").not(":animated").animate({
-                scrollTop: "+=" + ht + "px"
-            }, 500);
-        } else {
-            $("html, body").not(":animated").animate({
-                scrollTop: "-=" + ht + "px"
-            }, 500);
-        }
-        return false;
-    }); 
+$(document).ready(function(){ 
     $(".logo").click(function(){
        $(".logo").removeAttr("href");
        $("html,body").not(":animated").animate({
@@ -52,16 +39,12 @@ $(document).ready(function(){
     $(".galBox li").mouseleave(function(){
        $(".galHover").fadeOut(500); 
     });
+    
+    $(".scroll").click(function(){
+       var scrollPosition = $($(this).attr("href")).offset().top;
+        $("html,body").not(":animated").animate({
+           scrollTop:scrollPosition 
+        }, 500);
+    });
 });
 
-
-$(document).ready(function(){ 
-  $(window).scroll(function(){ 
-      var hei = $(document).scrollTop(); 
-      if(hei > 400){ 
-          var container = $(".name");
-            // Shuffle the contents of container
-          container.stop().shuffleLetters();
-      } 
-  }); 
-});

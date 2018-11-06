@@ -1,0 +1,129 @@
+@charset "utf-8";
+#con1 {
+    width:100%;
+    height:100%;
+    background-image:url("./images/sub1_bg.png");
+    background-attachment:fixed;
+    position:relative;
+}
+#con1 .txtArea {
+    position:absolute;
+    color:#fff;
+    top:40%;
+    left:calc(calc(100% - 724px) / 2);
+    font-size:50px;
+    font-weight:bold;
+    letter-spacing:20px;
+    text-align:center;
+}
+.projectInfo {
+    position:absolute;
+    width:500px;
+    height:100px;
+    bottom:20%;
+    left:calc(calc(100% - 500px) / 2);
+}
+.proBox {
+    width:45%;
+    float:left;
+}
+.proTit {
+    font-size:16px;
+    font-weight:300;
+}
+.proLine {
+    display:block;
+    width:120px;
+    height:2px;
+    background-color:#fff;
+    margin:10px auto;
+}
+.proBox .proTit, .proBox p {
+    color:#fff;
+    text-align:center;
+}
+.scroll {
+    display:block;
+    position:absolute;
+    background-image:url("./images/scroll_btn.png");
+    width:40px;
+    height:66px;
+    bottom:0;
+    left:calc(calc(100% - 40px) / 2);
+}
+/* 컨텐츠2 - 개요 */
+#con2 {
+    width:100%;
+    height:280px;
+    background-color:#999973;
+    padding-top:80px;
+}
+.conWrap {
+    width:1200px;
+    height:100%;
+    margin:0 auto;
+    position:relative;
+}
+.conTit {
+    float:left;
+    padding:10px;
+    font-size:25px;
+    font-weight:100;
+    margin-left:100px;
+    float:left;
+}
+.conTxtBox {
+    width:800px;
+    margin:10px;
+    float:left;
+}
+.conTxt {
+    font-family: 'Noto Sans KR', sans-serif;
+    color:#fff;
+    font-size:0.9em;
+    padding:8px;
+    font-weight:100;
+}
+.link {
+    font-family: 'Noto Sans KR', sans-serif;
+    display:block;
+    position:absolute;
+    left:21%;
+    bottom:34%;
+    background-color:transparent;
+    border:2px solid #fff;
+    width:150px;
+    height:40px;
+    color:#fff;
+    text-align:center;
+    line-height:40px;
+    transition:0.3s;
+    font-weight:600;
+}
+.link:hover {
+    background-color:#333;
+    border:2px solid #333;
+    color:#fff;
+}
+
+/* 컨텐츠3 - 디테일 */
+
+#con3 {
+    width:100%;
+    height:auto;
+    clear:both;
+    position:relative;
+}
+.Big_conTit {
+    position:absolute;
+    font-size:70px;
+    font-weight:100;
+    top:20px;
+    right:0;
+}
+.mainImgBox {
+    width:960px;
+    height:2260px;
+    box-shadow:10px 2px 50px #aaa;
+    margin:50px auto;
+}

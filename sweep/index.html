@@ -15,7 +15,7 @@
     <!-- font -->
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900|Titillium+Web:300,400,600" rel="stylesheet">
 	<link rel="stylesheet" href="./style.css">
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="./jquery-latest.js"></script>
     <script src="./main.js"></script>
     <script src="./script.js"></script>
     <script src="./jquery.shuffleLetters.js"></script>
@@ -41,11 +41,6 @@
 	                    </a>
                     </li>
                     <li>
-                        <a href="#con3">
-                            WORK
-                        </a>
-                    </li>
-                    <li>
                         <a href="#con4">
                             PORTFOLIO
 	                    </a>
@@ -65,10 +60,6 @@
 	        <div class="txtBox">
 	            <a href="#con2">
 	                ABOUT ME
-	                <span class="onLine"></span>
-	            </a>
-	            <a href="#con3">
-	                WORK
 	                <span class="onLine"></span>
 	            </a>
 	            <a href="#con4">
@@ -181,6 +172,7 @@
 	            </div>
 	        </div>
 	    </section>
+	    <!--
 	    <section id="con3">
 	        <h2 class="conTit">WORK</h2>
 	        <input type="radio" class="rdoBtn" name="rdo" id="rdo1" checked>
@@ -262,12 +254,12 @@
                 </ul>
             </div>
 	    </section>
+	    -->
 	    <section id="con4">
             <h2 class="conTit">PORTFOLIO</h2>
-            <input type="radio" class="rdoBtn" name="rdo" id="rdo21">
+            <input type="radio" class="rdoBtn" name="rdo" id="rdo21" checked>
 	        <input type="radio" class="rdoBtn" name="rdo" id="rdo22">
-	        <input type="radio" class="rdoBtn" name="rdo" id="rdo23" checked>
-	        <input type="radio" class="rdoBtn" name="rdo" id="rdo24">
+	        <input type="radio" class="rdoBtn" name="rdo" id="rdo23">
 	        <ul class="tabBox">
                 <li>
                     <label class="tab1 tabBtn" for="rdo21">
@@ -287,67 +279,90 @@
                         <span class="tabLine"></span>
                     </label>
                 </li>
-                <li>
-                    <label class="tab4 tabBtn" for="rdo24">
-                        ECT
-                        <span class="tabLine"></span>
-                    </label>
-                </li>
             </ul>
             <div class="galLst">
 	        <ul class="galBox gal1" id="pannel-21">
 	            <li>
-	                   <img src="" alt="">
-	                   <div class="galHover">
-	                       BUONO COFFEE
-	                   </div>
+                       <a href="gal1.html" class="load" target="_blank">
+	                       <img src="./images/web1.png" alt="보노커피">
+	                       <div class="galHover">
+	                           <p>BUONO COFFEE<br>데스크탑디자인</p>
+	                       </div>
+	                   </a>
 	            </li>
 	            <li>
-	                <a href="gal2.html">
-	                   <img src="" alt="">
+	                <a href="../design2/index.html" class="load" target="_parent">
+	                   <img src="./images/web2.png" alt="무주머루와인">
 	                   <div class="galHover">
-	                       무주머루와인
-	                   </div>
-	                </a>
-	            </li>
-	            <li>
-	                <a href="gal3.html">
-	                   <img src="" alt="">
-	                   <div class="galHover">
-	                       미소지움세탁소
+	                       <p>무주머루와인<br>데스크탑디자인</p>
 	                   </div>
 	                </a>
 	            </li>
 	            <li>
-	                <a href="gal4.html">
-	                   <img src="" alt="">
+	                <a href="../design5/index.html" class="load" target="_parent">
+	                   <img src="./images/web3.png" alt="미소지움세탁소">
 	                   <div class="galHover">
-	                       한국화이자제약
+	                       <p>미소지움세탁소<br>데스크탑디자인</p>
+	                   </div>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="../design6/index.html" class="load" target="_parent">
+	                   <img src="./images/web4.png" alt="한국화이자">
+	                   <div class="galHover">
+	                       <p>한국화이자제약<br>데스크탑디자인</p>
+	                   </div>
+	                </a>
+	            </li>
+	        </ul>
+	        <ul class="galBox gal1" id="pannel-22">
+	            <li>
+                   <a href="../mobile1/index.html" class="load">
+	                   <img src="./images/mo1.png" alt="발렌시아가">
+	                   <div class="galHover">
+	                       <p>발렌시아가<br>모바일앱</p>
+	                   </div>
+	               </a>
+	            </li>
+	            <li>
+	                <a href="mo2.html" class="load">
+	                   <img src="./images/mo2.png" alt="미소지움세탁소">
+	                   <div class="galHover">
+	                       <p>미소지움세탁소<br>모바일앱</p>
+	                   </div>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="mo3.html" class="load">
+	                   <img src="./images/mo3.png" alt="미소지움세탁소">
+	                   <div class="galHover">
+	                       <p>계룡시청<br>모바일앱</p>
 	                   </div>
 	                </a>
 	            </li>
 	        </ul>
 	        <ul class="galBox gal1" id="pannel-23">
 	            <li>
-                   <a href="http://sjportfolio.dothome.co.kr/respon1"></a>
-	                   <img src="./images/pofo1.png" alt="">
+                   <a href="../respon1/index.html" class="load">
+	                   <img src="./images/res1.png" alt="이케아">
 	                   <div class="galHover">
-	                       IKEA 반응형사이트
-	                   </div>
-	            </li>
-	            <li>
-                   <a href="http://sjportfolio.dothome.co.kr/respon2">
-	                   <img src="./images/pofo2.png" alt="">
-	                   <div class="galHover">
-	                       ETRI 반응형사이트
+	                       <p>IKEA<br>반응형사이트</p>
 	                   </div>
 	               </a>
 	            </li>
 	            <li>
-                   <a href="http://sjportfolio.dothome.co.kr/respon3">
-	                   <img src="./images/pofo3.png" alt="">
+                   <a href="../respon2/index.html" class="load">
+	                   <img src="./images/res2.png" alt="에트리">
 	                   <div class="galHover">
-	                       힐튼호텔 반응형사이트
+	                       <p>ETRI<br>반응형사이트</p>
+	                   </div>
+	               </a>
+	            </li>
+	            <li>
+                   <a href="../respon3/index.html" class="load">
+	                   <img src="./images/res3.png" alt="힐튼호텔">
+	                   <div class="galHover">
+	                       <p>힐튼호텔<br>반응형사이트</p>
 	                   </div>
 	               </a>
 	            </li>
@@ -360,10 +375,10 @@
                 <p>75, Jangan-ro, Gyeryongsi, Chungnam, Republic Korea</p>
 	            <p>T.+82 10-3975-3232   E-MAIL. psj1893@gmail.com</p>
 	            <form class="frmCon">
-	                <input type="text" value="Name" class="inp">
-	                <input type="text" value="E-mail" class="inp">
-	                <input type="text" value="Subject" class="inp">
-	                <input type="text" value="Content" class="inp">
+	                <input type="text" placeholder="Name" class="inp">
+	                <input type="text" placeholder="E-mail" class="inp">
+	                <input type="text" placeholder="Subject" class="inp">
+	                <input type="text" placeholder="Content" class="inp">
 	                <button type="submit" class="subBtn">Submit</button>
 	            </form>
 	        </div>
